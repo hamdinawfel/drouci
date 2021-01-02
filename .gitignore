@@ -1,2 +1,7 @@
 .env
 node_modules
+/client/node_modules
+.gitignore
+npm-debug.log
+.DS_Store
+/*.env
