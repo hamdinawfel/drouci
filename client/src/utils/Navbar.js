@@ -19,7 +19,6 @@
   //M-UI icon
   import MenuIcon from '@material-ui/icons/Menu';
   import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
-  import AccountCircleIcon from '@material-ui/icons/AccountCircle';
   import HomeIcon from '@material-ui/icons/Home';
   import InfoIcon from '@material-ui/icons/Info';
   import CastForEducationIcon from '@material-ui/icons/CastForEducation';
