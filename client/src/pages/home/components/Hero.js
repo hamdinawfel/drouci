@@ -116,23 +116,6 @@ export default function Hero() {
   const classes = useStyles();
 
   return (
-    // <div  className={classes.root}> 
-    //    <Grid container className={classes.heroContainer}>
-    //      <Grid item md={5} className={classes.heroCta}>
-    //         <h1 className={classes.title}>Révolutionnons l'éducation</h1>
-    //          <p className={classes.subTitle}>Commencez nos cours en ligne de haut qualité.<br />
-    //          Nos cours sont conforme à l'éducation national <img src={drapeau} className={classes.drapeau} alt="Tunisie" /></p>
-    //           <div style={{display:'flex', marginTop:30}}>
-    //             <Link to='/signup'color="inherit" style={{textDecoration:'none'}}>
-    //               <Button className={classes.ctaBtn}>Rejoignez Nous</Button>
-    //             </Link>
-    //           </div>
-    //      </Grid>
-    //      <Grid item md={7}  className={classes.heroImage}>
-    //         <img src="https://drouci-images.s3.us-east-2.amazonaws.com/hero.png" alt="drouci" className={classes.image}/>
-    //      </Grid>
-    //    </Grid>
-    // </div>
     <Grid container className={classes.root}>
       <Grid item xs={12} md={6} className={classes.heroCta}>
         <h1 className={classes.title}>Révolutionnons l'éducation</h1>
@@ -148,7 +131,6 @@ export default function Hero() {
       </Grid>
       <Grid item xs={12} md={6} style={{height:300,  display:'flex', justifyContent:'center', alignItems:'center'}}> 
           <img src="https://drouci-images.s3.us-east-2.amazonaws.com/hero.png" alt="drouci" className={classes.image}/>
-        
       </Grid>
     </Grid>
   );

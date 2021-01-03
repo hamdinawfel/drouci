@@ -10,9 +10,6 @@ import Teacher from './components/Teacher';
 const useStyles = makeStyles(theme => ({
     root: {
         backgroundColor:'#fff',
-     
-
-        // overflowX:'hidden'
     }
   }));
 export default function Home() {
@@ -20,9 +17,9 @@ export default function Home() {
     return (
         <div className={classes.root}>
             <Hero />
-            {/* <Features />
+            <Features />
             <Main />
-            <Teacher /> */}
+            <Teacher />
         </div>
     )
 }

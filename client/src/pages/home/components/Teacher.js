@@ -10,12 +10,17 @@ const useStyles = makeStyles(theme => ({
         }
     },
     image:{
-      width:'100%'
+      width:'80%',
+      [theme.breakpoints.down('sm')]: {
+      marginTop:40,
+      width:'70%',
+
+    }
     },
     titre:{
         color:'#fff',
         fontSize:'2rem',
-        width:600,
+        // width:600,
        
     },
     subTitle:{
@@ -28,8 +33,8 @@ const useStyles = makeStyles(theme => ({
         }
     },
     description:{
-        padding:'65px 0 0 40px'
-       
+        padding:'50px 0 0 0px',
+        maxWidth:500,
     }
   }));
 
@@ -38,10 +43,10 @@ export default function Teacher() {
 
     return (
         <Grid container className={classes.root}>
-            <Grid item sm={12} md={6}>
+            <Grid item sm={12} md={6} style={{display:'flex', justifyContent:'center'}}>
                <img src="https://drouci-images.s3.us-east-2.amazonaws.com/teaching.svg" alt='teacher' className={classes.image}/>
             </Grid>
-            <Grid item sm={12} md={6} className={classes.description}>
+            <Grid item sm={12} md={6} className={classes.description}style={{margin:'0 auto'}}>
               <h2 className={classes.titre}><span style={{ backgroundColor: '#003668', padding:'5px'}}>Devenir parmi nos enseignants</span></h2>
               <p className={classes.subTitle}>Drouci travaille avec plusieurs enseignants de tous horizons pour proposer des contenus 100% conformes et trés complets.</p>
               <p className={classes.subTitle}>Si vous voulez rejoindre notre équipe d'enseignants envoiyer une lettre de motivation sur ce email.</p>

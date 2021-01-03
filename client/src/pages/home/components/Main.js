@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
         justifyContent:'center',
         textAlign:'center',
         [theme.breakpoints.down('md')]: {
-            padding:'48px 20px',
+            padding:'48p 0',
         }
     },
     title:{
@@ -39,23 +39,13 @@ const useStyles = makeStyles(theme => ({
         lineHeight: '28px',
         fontWeight: 400,
         color:theme.palette.primary.text,
-        marginBottom:20,
+        marginBottom:40,
         [theme.breakpoints.down('md')]: {
-            padding:'0 50px',
-        }
-    },
-    button:{
-        backgroundColor:theme.palette.primary.main,
-        border:`1px solid ${theme.palette.primary.main}`,
-        color:'#fff',
-        padding:'10px 20px',
-        margin:'20px',
-        fontWeight:600,
-        textTransform:'capitalize',
-        marginTop:'20px',
-        '&:hover': {
-            color:theme.palette.primary.main,
+            padding:'0 20px',
         },
+        [theme.breakpoints.down('xs')]: {
+            display:'none'
+        }
     },
     card:{
         width:300,
@@ -63,12 +53,24 @@ const useStyles = makeStyles(theme => ({
         '&:hover': {
             transform: 'scale(1.05)'
         },
-        transition:'0.1s'
+        transition:'0.1s',
+        [theme.breakpoints.down('sm')]: {
+            marginTop:20,
+            width:'90%',
+        }
     },
-    cardContainer:{
-        padding:'0 100px',
-        [theme.breakpoints.down('md')]: {
-            padding:'100px 10px',
+    leftCard:{
+        width:300,
+        float:'right',
+        margin:'0px 20px',
+        '&:hover': {
+            transform: 'scale(1.05)'
+        },
+        transition:'0.1s',
+        [theme.breakpoints.down('sm')]: {
+            marginTop:20,
+            width:'90%',
+            float:'left',
         }
     },
     cardTitle:{
@@ -81,14 +83,16 @@ export default function Main() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <div style={{ background:'linear-gradient(#f2f2f2, #fff)',padding:48}}>
+            
+            <div style={{ background:'linear-gradient(#f2f2f2, #fff)', width:'100%'}}>
+              <div style={{ width: 70, height : 70, backgroundColor:'#fff', margin:'0 auto', transform:'rotate(45deg)', position:'relative', zIndex:'0', top:-50}}/>
                <h2 className={classes.title}>Faites le bon choix et apprenez sur la platforme drouci.com</h2>
                <p className={classes.subTitle}>Que vous êtes en classes préparatoire MP, PC, PT ou en baccalauréat : mathématiques, SVT, techniques, economie/gestion, lettre...drouci vous permettra d'optimiser votre temps et votre argent avec un contenue personnalisé et de haut qualité</p>
             </div>
            <Grid container className={classes.cardContainer}>
-              <Grid item sm={12} md={6}>
+              <Grid item xs={12} md={6}>
                 <Link to='/catalog/1ere-mp' style={{textDecoration:'none'}}>
-                    <Card className={classes.card} style={{float:'right', borderTop:"3px solid #02B3E4"}}>
+                    <Card className={classes.leftCard} style={{ borderTop:"3px solid #02B3E4"}}>
                         <CardActionArea>
                                 <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2"className={classes.cardTitle}>
@@ -101,7 +105,7 @@ export default function Main() {
                             </CardActionArea>
                             <CardActions style={{display:'block', justifyContent:'center'}}>
                             <Link to='/catalog/1ere-mp' style={{textDecoration:'none'}}>
-                                <Button variant="outlined" size="small" color="primary">
+                                <Button variant="outlined" size="small" color="primary" style={{margin:15}}>
                                    Découvrir
                                 </Button>
                             </Link>
@@ -109,7 +113,7 @@ export default function Main() {
                      </Card>
                 </Link>
                 </Grid>
-              <Grid item sm={12} md={6}>
+              <Grid item  xs={12} md={6}>
               <Link to='/catalog/bac-math' style={{textDecoration:'none'}}>
                 <Card className={classes.card} style={{borderTop:"3px solid  #15c26b"}}>
                         <CardActionArea>
@@ -124,7 +128,7 @@ export default function Main() {
                             </CardActionArea>
                             <CardActions style={{display:'block', justifyContent:'center'}}>
                             <Link to='/catalog/bac-math' style={{textDecoration:'none'}}>
-                                <Button variant="outlined" size="small" color="primary">
+                                <Button variant="outlined" size="small" color="primary" style={{margin:15}}>
                                 Découvrir
                                 </Button>
                             </Link>

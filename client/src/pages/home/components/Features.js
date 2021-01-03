@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        marginTop:-100, 
+        // marginTop:-100, 
         backgroundColor:'#fff',
         position:'relative'
     },
@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
        textAlign:'center',
        marginTop:30,
        fontWeight:700,
-       fontSize: '1.125rem',
+       fontSize: '1.5rem',
        color:theme.palette.primary.main
     },
     text:{
@@ -50,8 +50,6 @@ export default function Features() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            {/* <Title title="Ne perdez pas votre temps ou votre argent précieux"
-                   text="Seule drouci a tous les facteurs critiques pour obtenir des résultats réels"/> */}
             <Grid container className={classes.cardContainer}>
               <Grid item sm={3} className={classes.card} >
                   <img src="https://drouci-images.s3.us-east-2.amazonaws.com/education.svg" alt="seo word" style={{width:200}} className={classes.icon} />
