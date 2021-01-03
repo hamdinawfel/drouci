@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => ({
     }
   }));
   
-export default function Services() {
+export default function Features() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
