@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
       padding:'120px 100px 45px 100px',
       margin:0,
       width:'100%',
+      userSelect:'none',
       backgroundColor:'#F2F2F2',
       display:'flex',
       flexDirection: 'row',
@@ -40,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     title:{
-      fontSize: '2.1rem',
+      fontSize: '2rem',
       fontWeight: 700,
       color:'#3C3B37',
       [theme.breakpoints.down('md')]: {

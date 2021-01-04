@@ -27,7 +27,8 @@
   //Utils
   import { connect } from 'react-redux';
   import { logoutUser } from '../feature/auth/action'
-
+  //logo
+  import logo from '../pages/home/assets/logo.jpg'
   const useStyles = makeStyles(theme => ({
       root: {
           backgroundColor:'#fff',
@@ -45,23 +46,24 @@
       },
       logoSection:{
         display:'flex',
+        [theme.breakpoints.down('sm')]: {
+            display:'flex',
+            justifyContent:'center'
+       },
       },
       logo:{
-        color:theme.palette.primary.main,
-          marginTop:5,
-          fontSize:'2.5rem',
-          fontWeight:900,  
+        [theme.breakpoints.down('sm')]: {
+           marginLeft:20
+       },
       },
       phoneContainer:{
         display:'flex',
         marginLeft:50,
         justifyContent:'flex-end',
         [theme.breakpoints.down('sm')]: {
-        marginLeft:'20%'
+           display:'none'
         },
-        [theme.breakpoints.down('xs')]: {
-        marginLeft:'10px'
-        },
+        
       },
       phoneIcon:{
           margin:'15px 0 0 20px',
@@ -178,7 +180,9 @@
           transition:' 0.3s'
       },
       menuIcon:{
-          margin:'15px 20px 0 20px',
+          margin:'15px 20px 0 0',
+          position:'relative',
+          left:'40%',
           cursor:'pointer',
           color:theme.palette.primary.main,
           '&:hover': {
@@ -187,6 +191,9 @@
           display:'none',
           [theme.breakpoints.down('sm')]: {
               display:'flex',
+            },
+          [theme.breakpoints.down('xs')]: {
+            left:'35%',
             },
       },
       navMobileItem:{
@@ -380,20 +387,14 @@
           <React.Fragment>
             <Grid container className={classes.root}>
                 <Grid item xs={12} md={4} className={classes.logoSection}>
-                  <MenuIcon 
-                      fontSize="large" 
-                      className={classes.menuIcon} 
-                      onClick={toggleDrawer}
-                    />
                     <div style={{ width:100}}>
                       {
                         !props.user.authenticated?
                         <Link to='/'color="inherit" style={{textDecoration:'none'}}>
-                          <h1 className={classes.logo}>drouci</h1>
+                          <img src={logo} alt ="logo" style={{ width: 100 ,marginTop:5}} className={classes.logo}/>
                         </Link>
                         :
-                        
-                          <h1 className={classes.logo}>drouci</h1>
+                        <img src={logo} alt ="logo" style={{ width: 100}}/>
                        
                        }
                     </div>
@@ -403,9 +404,14 @@
                           <p className={classes.phoneNumber}>80 000 555</p>
                       </div>
                     </div>  
+                    <MenuIcon 
+                      fontSize="large" 
+                      className={classes.menuIcon} 
+                      onClick={toggleDrawer}
+                    />
                 </Grid>
                 <Grid item md={8} className={classes.navSection}> 
-                {/* <p className={classes.navItem}>Qui sommes nous ?</p> */}
+                
                   <HoverMenu interactive
                     title={
                     <div className={classes.hoverMenu}>
@@ -424,7 +430,7 @@
                   {!props.user.authenticated?
                       <React.Fragment>
                         
-                          <Divider orientation="vertical" flexItem style={{margin:'15px 20px 30px 0'}}/>
+                          <Divider orientation="vertical" flexItem style={{margin:'15px 20px 15px 0'}}/>
                         
                         <Link to='/login' style={{color:'inherit', textDecoration:'none'}}>
                           <Button className={classes.signinItem}>

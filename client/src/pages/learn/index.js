@@ -66,9 +66,6 @@ const useStyles = makeStyles(theme => ({
    video:{
        width:650,
     [theme.breakpoints.down('sm')]: {
-        width:600
-      },
-    [theme.breakpoints.down('xs')]: {
         width:'100%'
       },
    },
@@ -98,9 +95,8 @@ const useStyles = makeStyles(theme => ({
         height:'100%',
         padding:20,
         marginTop:30,
-        [theme.breakpoints.down('xs')]: {
-            width:'100%',
-            margin:'10px'
+        [theme.breakpoints.down('sm')]: {
+        display:'none'
           },
    },
     pannier:{

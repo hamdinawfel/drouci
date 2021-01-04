@@ -85,7 +85,7 @@ export default function Main() {
         <div className={classes.root}>
             
             <div style={{ background:'linear-gradient(#f2f2f2, #fff)', width:'100%'}}>
-              <div style={{ width: 70, height : 70, backgroundColor:'#fff', margin:'0 auto', transform:'rotate(45deg)', position:'relative', zIndex:'0', top:-50}}/>
+              <div style={{ width:80, height :80, backgroundColor:'#fff', margin:'0 auto', transform:'rotate(45deg)', position:'relative', zIndex:'0', top:-50}}/>
                <h2 className={classes.title}>Faites le bon choix et apprenez sur la platforme drouci.com</h2>
                <p className={classes.subTitle}>Que vous êtes en classes préparatoire MP, PC, PT ou en baccalauréat : mathématiques, SVT, techniques, economie/gestion, lettre...drouci vous permettra d'optimiser votre temps et votre argent avec un contenue personnalisé et de haut qualité</p>
             </div>

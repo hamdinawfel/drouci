@@ -12,8 +12,8 @@ const catalogRouter = require("./routes/catalogRouter");
 const wishlistRouter = require("./routes/wishlistRouter");
 
 // Connect to MongoDB
-// const url = 'mongodb://localhost:27017/tomoro'; 
-const url = process.env.mongoURI
+const url = 'mongodb://localhost:27017/tomoro'; 
+// const url = process.env.mongoURI
 mongoose
 .connect(url, {
 useUnifiedTopology: true,

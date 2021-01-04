@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
       [theme.breakpoints.down('sm')]: {
       marginTop:40,
       width:'70%',
-
+      userSelect:'none',
     }
     },
     titre:{
@@ -26,6 +26,7 @@ const useStyles = makeStyles(theme => ({
     subTitle:{
         fontSize: '18px',
         lineHeight: '28px',
+
         fontWeight: 400,
         color:theme.palette.primary.text,
         [theme.breakpoints.down('md')]: {
@@ -33,8 +34,9 @@ const useStyles = makeStyles(theme => ({
         }
     },
     description:{
-        padding:'50px 0 0 0px',
-        maxWidth:500,
+        // padding:'50px 10px 0 10px',
+        maxWidth:'100%',
+        // width:'100%'
     }
   }));
 

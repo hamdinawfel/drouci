@@ -1,6 +1,5 @@
 import React , { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 //M-UI
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -9,6 +8,8 @@ import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 import SchoolIcon from '@material-ui/icons/School';
 import EditIcon from '@material-ui/icons/Edit';
+//
+import UpdateLevel from './UpdateLevel'
 //Redux
 import { connect } from 'react-redux';
 
@@ -91,7 +92,7 @@ function Header(props) {
            <p className={classes.name}>Bienvenu <span style={{textTransform:'capitalize'}}>{props.user.credentials.firstname} {props.user.credentials.lastname}</span></p>
             <div style={{display:'flex'}}>
                 <p className={classes.level}> <SchoolIcon style={{color:"#003668", marginRight:10, verticalAlign:'middle'}}/>{props.user.credentials.level}</p>
-                <Chip
+                {/* <Chip
                    className={classes.updateChip}
                    style={{margin:'10px 0 0 10px'}}
                     variant="outlined"
@@ -103,7 +104,8 @@ function Header(props) {
                     // onDelete={handleDelete}
                     // deleteIcon={<DoneIcon />}
                 />
-                <EditIcon color="primary" fontSize='small' className={classes.updateIcon} />
+                <EditIcon color="primary" fontSize='small' className={classes.updateIcon} /> */}
+              <UpdateLevel />
             </div>
         </Grid>
       </Grid>

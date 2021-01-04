@@ -25,6 +25,7 @@ const useStyles = makeStyles(theme => ({
          }
     },
     icon:{
+      userSelect:'none',
         fontSize:'50px',
         display:'block',
         margin:'0 auto',

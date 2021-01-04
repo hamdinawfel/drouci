@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     },
    header:{
        width:'100%',
-       backgroundColor:theme.palette.primary.main,
+       backgroundColor:'#003668',
        display:'flex',
        justifyContent:'center',
        alignItems:'center',
@@ -54,7 +54,6 @@ const useStyles = makeStyles(theme => ({
        fontWeight:900,
       //  margin:'20px',
        color:'#fff',
-       opacity:0.98,
        [theme.breakpoints.down('sm')]: {
         padding:'20px 10px',
         fontSize:'1.2rem',
@@ -72,12 +71,10 @@ const useStyles = makeStyles(theme => ({
 
    },
    video:{
-       width:650,
+    width:650,
     [theme.breakpoints.down('sm')]: {
-        width:600
-      },
-    [theme.breakpoints.down('xs')]: {
-        width:'100%'
+        width:'100%',
+        // margin:20
       },
    },
    text:{
@@ -106,9 +103,9 @@ const useStyles = makeStyles(theme => ({
         height:'100%',
         padding:20,
         marginTop:30,
-        [theme.breakpoints.down('xs')]: {
+        [theme.breakpoints.down('sm')]: {
             width:'100%',
-            margin:'10px'
+            margin:'20px'
           },
    },
     pannier:{
@@ -134,7 +131,10 @@ const useStyles = makeStyles(theme => ({
     },
     image:{
         width:'100%',
-        height:'140px'
+        height:'140px',
+        [theme.breakpoints.down('sm')]: {
+          display:'none'
+        },
     },
     cardtitle:{
         fontWeight:600,
