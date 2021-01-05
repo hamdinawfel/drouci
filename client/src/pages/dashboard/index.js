@@ -6,6 +6,8 @@ import Header from './components/Header'
 import Wishlist from './components/Wishlist'
 import Courses from './components/Courses'
 
+import { connect } from 'react-redux';
+
 const useStyles = makeStyles(theme => ({
   root: {
       marginTop:70,
@@ -13,14 +15,27 @@ const useStyles = makeStyles(theme => ({
      },
 }));
   
-export default function Dashbord () {
+function Dashbord (props) {
     const classes = useStyles();
    
     return (
         <div className={classes.root}>
-           <Header />
-           <Wishlist />
-           <Courses />
+          {props.user.loading?
+            <p style={{marginTop:300, textAlign:'center'}}>loading</p>
+            :
+            <div>
+            <Header />
+            <Wishlist />
+            <Courses />
+            </div>}
         </div>   
     )
 }
+const mapStateToProps = (state) => ({
+    user: state.user,
+  });
+
+  export default connect(
+    mapStateToProps,
+    null
+  )(Dashbord);

@@ -90,10 +90,10 @@ const useStyles = makeStyles(theme => ({
 
 function Courses(props) {
     const classes = useStyles();
-    let { level } = useParams();
+    // let { level } = useParams();
     useEffect(() => {
-        props.getCoursesByLevel(level)
-        console.log(level)
+        props.getCoursesByLevel(props.user.level)
+        console.log(props.user.level)
       }, []);
 
     const { loading, credentials } = props.user

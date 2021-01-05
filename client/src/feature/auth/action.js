@@ -23,7 +23,7 @@ import {
       .catch(err =>
         dispatch({
           type: SET_ERRORS,
-          payload: err.response.data
+          payload: err.response
         })
       );
   };
@@ -40,7 +40,7 @@ import {
       .catch(err =>
         dispatch({
           type: SET_ERRORS,
-          payload: err.response.data
+          payload: err.response
 
         })
       );
@@ -54,7 +54,7 @@ import {
 
   export const getUserData = () => (dispatch) => {
     dispatch({ type: LOADING_USER });
-    const token = localStorage.jwtToken;
+   const  token = localStorage.getItem("jwtToken");
     const decodedToken = jwtDecode(token);
     axios
       .get(`/users/${decodedToken._id}`)
@@ -67,7 +67,7 @@ import {
       .catch((err) => console.log(err));
   };
   const setAuthorizationHeader = (token) => {
-    const jwtToken = `Bearer ${token}`;
+    const jwtToken = `bearer ${token}`;
     localStorage.setItem('jwtToken', jwtToken);
     axios.defaults.headers.common['Authorization'] = jwtToken;
   };
@@ -82,8 +82,9 @@ import {
   }
   export const addUserDetail = (userData) => (dispatch) => {
     dispatch({ type: ADD_USER_DETAILS });
+    const token = localStorage.getItem("jwtToken");
     axios
-    .put("users/", userData)
+    .put('http://localhost:8080/users/', userData)
     .then(res => { 
       dispatch(getUserData());
     })

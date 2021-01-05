@@ -79,7 +79,7 @@ export default function Footer() {
     <React.Fragment>
       <Grid container className={classes.root}>
         <Grid item xs={12} sm={5}>
-           <img src={logo}  alt={logo} style={{ width : 100}}/>
+           <img src={logo}  alt={logo} style={{ width : 120, margin:'10px 0 -10px 0'}}/>
           <p className={classes.subTitle}>Nous construisons l'avenir de l'apprentissage numérique en Afrique du Nord et de Monyen-Orient (réqion MENA).</p>
           <p className={classes.subTitle}>La platforme drouci vise à personnaliser l'éducation national et à mettre en oeuvre des contenus de haute qualité pour les étudiants.</p>
         </Grid>

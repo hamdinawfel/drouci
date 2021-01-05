@@ -88,7 +88,7 @@ const handleSignupUser = (e) => {
 
   return (
     <React.Fragment>
-          {!props.user.authenticated?null:<Redirect to={`dashboard/${props.user.credentials.level}`}/>}
+        {!props.user.authenticated ?null:<Redirect to={props.user.path}/>}
         <Container className={classes.root} component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>

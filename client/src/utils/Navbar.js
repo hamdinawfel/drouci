@@ -394,14 +394,15 @@
                           <img src={logo} alt ="logo" style={{ width: 100 ,marginTop:5}} className={classes.logo}/>
                         </Link>
                         :
-                        <img src={logo} alt ="logo" style={{ width: 100}}/>
-                       
+                        <Link to='/dashboard' color="inherit" style={{textDecoration:'none'}}>
+                          <img src={logo} alt ="logo" style={{ width: 100}}/>
+                        </Link>
                        }
                     </div>
                     <div className={classes.phoneContainer}>
                       <PhoneIphoneIcon fontSize="large" className={classes.phoneIcon}/>
                       <div>
-                          <p className={classes.phoneNumber}>80 000 555</p>
+                          <p className={classes.phoneNumber}>36 100 100</p>
                       </div>
                     </div>  
                     <MenuIcon 
@@ -448,7 +449,7 @@
                           title={
                             <div>
                                 <div style={{display:'block',justifyContent:'center'}}>
-                                  <Link to='/dashboard'color="inherit" style={{textDecoration:'none'}}>
+                                  <Link to='/dashboard' color="inherit" style={{textDecoration:'none'}}>
                                     <Avatar className={classes.cardAvater} >{firstChart}</Avatar>
                                   </Link>
                                   <Typography gutterBottom className={classes.name}>
@@ -466,12 +467,16 @@
                                 </div>
                                 <div style={{textAlign:'center'}}>
                                   {!props.user.loading?
-                                  <Link to={`/dashboard/${props.user.credentials.level}`} color="inherit" style={{textDecoration:'none'}}>
+                                  <Link to='/dashboard' color="inherit" style={{textDecoration:'none'}}>
                                     <p className={classes.avatarButton}>Mes Cours</p>
                                   </Link>:null}
                                 </div>
                                 <div style={{textAlign:'center'}}>
-                                  <p className={classes.avatarButton} onClick={handleLogout}>Déconnecter</p>
+                                  <Link to='/'color="inherit" style={{textDecoration:'none'}} onClick={handleLogout}>
+                                  <p className={classes.avatarButton}>
+                                     Déconnecter
+                                  </p>
+                                   </Link>
                                 </div>
                             </div>
                         }

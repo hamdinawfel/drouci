@@ -11,9 +11,12 @@ import {
   const initialState = {
     authenticated: false,
     loading: false,
+    level:'',
+    firstname:'',
+    lastname:'',
     credentials: {},
     errors:{},
-    path:'/'
+    path:'/dashboard'
   };
   
   export default function(state = initialState, action) {
@@ -21,7 +24,7 @@ import {
       case SET_AUTHENTICATED:
         return {
           ...state,
-          authenticated: true
+          authenticated: true,
         };
       case SET_UNAUTHENTICATED:
         return initialState;
@@ -29,7 +32,11 @@ import {
         return {
           authenticated: true,
           loading: false,
-          credentials: action.payload
+          credentials: action.payload,
+          level:action.payload.level,
+          firstname:action.payload.firstname,
+          lastname:action.payload.lastname,
+          path:  '/dashboard'
         };
       case LOADING_USER:
         return {

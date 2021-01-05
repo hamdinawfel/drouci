@@ -73,7 +73,7 @@ function App() {
                   <Route  exact path="/catalog/:level" component={Catalog} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/signup" component={Signup} />
-                  <PrivateRoute exact path="/dashboard/:level" component={Dashboard} />
+                  <PrivateRoute exact path="/dashboard" component={Dashboard} />
                   <PrivateRoute exact path="/learn/:wishlistId" component={Learn} />
                 </Switch>
               </div>

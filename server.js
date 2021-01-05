@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
+var cors = require('cors')
 const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
@@ -12,8 +13,8 @@ const catalogRouter = require("./routes/catalogRouter");
 const wishlistRouter = require("./routes/wishlistRouter");
 
 // Connect to MongoDB
-const url = 'mongodb://localhost:27017/tomoro'; 
-// const url = process.env.mongoURI
+// const url = 'mongodb://localhost:27017/tomoro'; 
+const url = process.env.mongoURI
 mongoose
 .connect(url, {
 useUnifiedTopology: true,
@@ -24,7 +25,7 @@ useCreateIndex:true
 .catch(err => {
 console.log(`DB Connection Error: ${err.message}`);
 });
-
+app.use(cors())
 // upload file middlware -folder
 // app.use('/images',express.static(path.join(__dirname,'images')));
 // app.use('/videos',express.static(path.join(__dirname,'videos')));

@@ -70,12 +70,14 @@ function UpdateLevel(props) {
 
   const handleListItemClick = (value) => {
     setSelected(value);
-    // console.log(level)
-    // addUserDetail(value)
   };
  const handleChangeLevel = () => {
-    props.addUserDetail(selected)
-    // console.log(props)
+   const userData = {
+     level: selected
+   }
+    props.addUserDetail(userData);
+    setSelected('');
+    setOpen(false);
  }
 
   return (
@@ -91,7 +93,7 @@ function UpdateLevel(props) {
             color="primary"
             onClick={handleClickOpen}
         />
-       <EditIcon color="primary" fontSize='small' className={classes.updateIcon}/>
+       <EditIcon color="primary" fontSize='small' className={classes.updateIcon} onClick={handleClickOpen}/>
        <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open} style={{overflowY:'hidden'}}>
       <DialogTitle style={{color:'#f44336'}} id="simple-dialog-title">Vous êtes sérieux de modifier votre niveau ?</DialogTitle>
       <List>
