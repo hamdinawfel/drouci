@@ -103,7 +103,7 @@ function Courses(props) {
              <p className={classes.header}>Tout les cours pour {credentials.level}</p>
              <div className={classes.divider}/>
            { 
-           !loading?
+           !props.courses.loading?
                 <Grid container>
                     {props.courses.fitredData.map(course => <CardItem key={course._id} course={course} />)}
                 </Grid>
