@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop:100,
     width:'100%',
     padding:'20px 100px',
-    backgroundColor:'#5d5d5d',
+    backgroundColor:'#333',
     [theme.breakpoints.down('md')]: {
       padding:'50px 20px',
     },
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   footer:{
     width:'100%',
     padding:'20px 100px',
-    backgroundColor:'#5d5d5d',
+    backgroundColor:'#333',
     [theme.breakpoints.down('md')]: {
       padding:'50px 20px',
     },

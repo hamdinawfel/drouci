@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
       margin:0,
       width:'100%',
       userSelect:'none',
-      backgroundColor:'#F2F2F2',
+      backgroundColor:'#D7EEF7',
       display:'flex',
       flexDirection: 'row',
       [theme.breakpoints.down('md')]: {

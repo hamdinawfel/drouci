@@ -84,7 +84,7 @@ import {
     dispatch({ type: ADD_USER_DETAILS });
     const token = localStorage.getItem("jwtToken");
     axios
-    .put('http://localhost:8080/users/', userData)
+    .put('/users/', userData)
     .then(res => { 
       dispatch(getUserData());
     })
