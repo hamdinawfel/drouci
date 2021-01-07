@@ -395,7 +395,7 @@
                         !props.user.authenticated?
                         <Link to='/'color="inherit" style={{textDecoration:'none', display:'flex'}}>
                           <img src={logo} alt ="logo" style={{ width: 50 ,marginTop:10}} className={classes.logo}/>
-                          <p style={{color:'#017a9b', fontSize:'2rem', margin:'10px 0 0 0', fontWeight:900, userSelect:'none'}}>drouci</p>
+                          <p style={{color:'#017a9b', fontSize:'2rem', margin:'0', marginTop:10, fontWeight:900, userSelect:'none'}}>drouci</p>
                         </Link>
                         :
                         <Link to='/dashboard' color="inherit" style={{textDecoration:'none', display:'flex'}}>
