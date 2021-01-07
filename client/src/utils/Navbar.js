@@ -28,7 +28,7 @@
   import { connect } from 'react-redux';
   import { logoutUser } from '../feature/auth/action'
   //logo
-  import logo from '../pages/home/assets/logo.jpg'
+  import logo from '../pages/home/assets/logo.png'
   const useStyles = makeStyles(theme => ({
       root: {
           backgroundColor:'#fff',
@@ -58,10 +58,13 @@
       },
       phoneContainer:{
         display:'flex',
-        marginLeft:50,
+        marginLeft:100,
         justifyContent:'flex-end',
         [theme.breakpoints.down('sm')]: {
            display:'none'
+        },
+        [theme.breakpoints.down('md')]: {
+        marginLeft:50,
         },
         
       },
@@ -390,12 +393,14 @@
                     <div style={{ width:100}}>
                       {
                         !props.user.authenticated?
-                        <Link to='/'color="inherit" style={{textDecoration:'none'}}>
-                          <img src={logo} alt ="logo" style={{ width: 100 ,marginTop:5}} className={classes.logo}/>
+                        <Link to='/'color="inherit" style={{textDecoration:'none', display:'flex'}}>
+                          <img src={logo} alt ="logo" style={{ width: 50 ,marginTop:10}} className={classes.logo}/>
+                          <p style={{color:'#017a9b', fontSize:'2rem', margin:'10px 0 0 0', fontWeight:900, userSelect:'none'}}>drouci</p>
                         </Link>
                         :
-                        <Link to='/dashboard' color="inherit" style={{textDecoration:'none'}}>
+                        <Link to='/dashboard' color="inherit" style={{textDecoration:'none', display:'flex'}}>
                           <img src={logo} alt ="logo" style={{ width: 100}}/>
+                          <p style={{color:'#017a9b', fontSize:'2rem', margin:'10px 0 0 0', fontWeight:900, userSelect:'none'}}>drouci</p>
                         </Link>
                        }
                     </div>

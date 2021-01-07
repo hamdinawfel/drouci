@@ -5,11 +5,15 @@ import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
+import { Grid } from '@material-ui/core';
+//M-UI ICONS
+
 import FacebookIcon from '@material-ui/icons/Facebook';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import { Grid } from '@material-ui/core';
-
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import logo from '../pages/home/assets/logoFooter.png'
 function Copyright() {
   const classes = useStyles();
@@ -86,25 +90,25 @@ export default function Footer() {
         <Grid item xs={12} sm={4} className={classes.social}>
           <p className={classes.title}>Suivez Nous</p>
           <a href='/' style={{color:'inherit', textDecoration:'none'}}>
-             <p className={classes.subTitle}>Facebook</p>
+             <p className={classes.subTitle}> <FacebookIcon style={{verticalAlign:'middle', marginRight:10}}/>Facebook</p>
            </a>
            <a href='/' style={{color:'inherit', textDecoration:'none'}}>
-             <p className={classes.subTitle}>Instagram</p>
+             <p className={classes.subTitle}> <InstagramIcon style={{verticalAlign:'middle', marginRight:10}}/>Instagram</p>
            </a>
              <a href='/' style={{color:'inherit', textDecoration:'none'}}>
-           <p className={classes.subTitle}>Youtube</p>
+           <p className={classes.subTitle}> <YouTubeIcon style={{verticalAlign:'middle', marginRight:10}}/>Youtube</p>
            </a>
            <a href='/' style={{color:'inherit', textDecoration:'none'}}>
-             <p className={classes.subTitle}>Lenkedin</p>
+             <p className={classes.subTitle}> <LinkedInIcon style={{verticalAlign:'middle', marginRight:10}}/>Lenkedin</p>
            </a>          
         </Grid>
         <Grid item xs={12} sm={3}>
           <p className={classes.title}>Contactez Nous</p>
           <a href='/' style={{color:'inherit', textDecoration:'none'}}>
-             <p className={classes.subTitle}>Téléphone : +216 36 100 100</p>
+             <p className={classes.subTitle}><PhoneAndroidIcon style={{verticalAlign:'middle', marginRight:10}}/> +216 36 100 100</p>
            </a>
            <a href='/' style={{color:'inherit', textDecoration:'none'}}>
-             <p className={classes.subTitle}>Email : contact.drouci@gmail.com</p>
+             <p className={classes.subTitle}><MailOutlineIcon style={{verticalAlign:'middle', marginRight:10}}/> contact.drouci@gmail.com</p>
            </a>
         </Grid>
       </Grid>

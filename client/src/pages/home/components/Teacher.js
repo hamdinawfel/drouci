@@ -11,6 +11,7 @@ const useStyles = makeStyles(theme => ({
     },
     image:{
       width:'80%',
+      marginTop:-50,
       [theme.breakpoints.down('sm')]: {
       marginTop:40,
       width:'70%',
@@ -21,7 +22,6 @@ const useStyles = makeStyles(theme => ({
         color:'#fff',
         fontSize:'2rem',
         // width:600,
-       
     },
     subTitle:{
         fontSize: '18px',
@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
         }
     },
     description:{
-        // padding:'50px 10px 0 10px',
+        
         maxWidth:'100%',
         // width:'100%'
     }
