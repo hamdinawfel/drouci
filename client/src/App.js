@@ -15,6 +15,7 @@ import Learn from './pages/learn/index'
 import Course from './pages/course/index'
 import Catalog from './pages/catalog/index'
 import Dashboard from './pages/dashboard/index'
+import Teacher from './pages/teacher/index'
 //feature
 import Login from './feature/auth/Login'
 import Signup from './feature/auth/Signup'
@@ -69,6 +70,7 @@ function App() {
               <div > 
                 <Switch>
                   <Route exact path="/" component={Home} />
+                  <Route exact path="/teacher" component={Teacher} />
                   <Route exact path="/courses/:courseId" component={Course} />
                   <Route  exact path="/catalog/:level" component={Catalog} />
                   <Route exact path="/login" component={Login} />

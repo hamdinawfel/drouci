@@ -51,8 +51,12 @@ const useStyles = makeStyles((theme) => ({
   },
   subTitle:{
     fontSize: '18px',
-    fontWeight: 400,
-    color:'#fff'
+    fontWeight: 300,
+    margin:'5px 0',
+    color:'#fff',
+    '&:hover': {
+     opacity:0.7
+  },
   },
   social:{
     paddingLeft:70,
@@ -70,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
   },
   copyright:{
     color:'#fff' ,
-    // textAlign:'end',
+    marginTop:25,
      [theme.breakpoints.down('xs')]: {
     //  float:'left',
      textAlign:'center'
@@ -83,9 +87,10 @@ export default function Footer() {
     <React.Fragment>
       <Grid container className={classes.root}>
         <Grid item xs={12} sm={5}>
-           <img src={logo}  alt={logo} style={{ width : 120, margin:'10px 0 -10px 0'}}/>
-          <p className={classes.subTitle}>Nous construisons l'avenir de l'apprentissage numérique en Afrique du Nord et de Monyen-Orient (réqion MENA).</p>
-          <p className={classes.subTitle}>La platforme drouci vise à personnaliser l'éducation national et à mettre en oeuvre des contenus de haute qualité pour les étudiants.</p>
+           {/* <img src={logo}  alt={logo} style={{ width : 120, margin:'10px 0 -10px 0'}}/> */}
+           <p className={classes.title}>Qui Somme Nous?</p>
+          <p style={{fontSize: '18px', fontWeight: 300, color:'#fff'}}>Nous construisons l'avenir de l'apprentissage numérique en Afrique du Nord et de Monyen-Orient (réqion MENA).</p>
+          <p style={{fontSize: '18px', fontWeight: 300, color:'#fff'}}>La platforme drouci vise à personnaliser l'éducation national et à mettre en oeuvre des contenus de haute qualité pour les étudiants.</p>
         </Grid>
         <Grid item xs={12} sm={4} className={classes.social}>
           <p className={classes.title}>Suivez Nous</p>
@@ -104,25 +109,27 @@ export default function Footer() {
         </Grid>
         <Grid item xs={12} sm={3}>
           <p className={classes.title}>Contactez Nous</p>
-          <a href='/' style={{color:'inherit', textDecoration:'none'}}>
-             <p className={classes.subTitle}><PhoneAndroidIcon style={{verticalAlign:'middle', marginRight:10}}/> +216 36 100 100</p>
-           </a>
-           <a href='/' style={{color:'inherit', textDecoration:'none'}}>
-             <p className={classes.subTitle}><MailOutlineIcon style={{verticalAlign:'middle', marginRight:10}}/> contact.drouci@gmail.com</p>
-           </a>
+             <p style={{fontSize: '18px', fontWeight: 300, color:'#fff'}}><PhoneAndroidIcon style={{verticalAlign:'middle', marginRight:10}}/> +216 36 100 100</p>
+             <p style={{fontSize: '18px', fontWeight: 300, color:'#fff'}}><MailOutlineIcon style={{verticalAlign:'middle', marginRight:10}}/> contact.drouci@gmail.com</p>
+           
         </Grid>
       </Grid>
       <Divider />
       <Grid container className={classes.footer}>
         <Grid item xs={0} sm={5} className={classes.diplay}>
+          <div style={{display:'flex'}}>
+            <img src={logo} alt ="logo" style={{ width:60 , height:60,userSelect:'none', marginTop:5 }}/>
+            <h1 style={{color:'#fff', fontSize:'2rem', margin:'15px 0 0 0', fontWeight:800, userSelect:'none'}}>drouci</h1>
+          </div>
+{/* 
           <Typography variant="body2" color="#fff" style={{color:'#fff'}}>
              Condition d'utilisation
-            </Typography>
+            </Typography> */}
         </Grid>
         <Grid item xs={0} sm={4} className={classes.diplay} style={{paddingLeft:70}}>
-            <Typography variant="body2" color="#fff" style={{color:'#fff'}}>
+            {/* <Typography variant="body2" color="#fff" style={{color:'#fff'}}>
                Confidentialité
-            </Typography>
+            </Typography> */}
         </Grid>
         <Grid item xs={12} sm={3}>
           <Copyright />

@@ -256,6 +256,11 @@
         textTransform: 'uppercase',
         textAlign:'center',
         margin:'10px 5px 0 5px'
+      },
+      hidden:{
+        [theme.breakpoints.down('md')]: {
+          display:'none'
+          },
       }
     }));
 
@@ -394,8 +399,8 @@
                       {
                         !props.user.authenticated?
                         <Link to='/'color="inherit" style={{textDecoration:'none', display:'flex'}}>
-                          <img src={logo} alt ="logo" style={{ width: 50, maxHeight:50 ,marginTop:10}} className={classes.logo}/>
-                          <p style={{color:'#017a9b', fontSize:'2rem', margin:'15px 0 0 0', marginTop:10, fontWeight:900, userSelect:'none'}}>drouci</p>
+                          <img src={logo} alt ="logo" style={{ width:60 , height:60,marginTop:5,userSelect:'none' }}  className={classes.logo}/>
+                          <h1 style={{color:'#017a9b', fontSize:'2rem', margin:'15px 0 0 0',height:60,  marginTop:10, fontWeight:800, userSelect:'none'}}>drouci</h1>
                         </Link>
                         :
                         <Link to='/dashboard' color="inherit" style={{textDecoration:'none', display:'flex'}}>
@@ -417,7 +422,6 @@
                     />
                 </Grid>
                 <Grid item md={8} className={classes.navSection}> 
-                
                   <HoverMenu interactive
                     title={
                     <div className={classes.hoverMenu}>
@@ -432,6 +436,9 @@
                   >
                     <p className={classes.navItem}>Nos Classes</p>
                   </HoverMenu>
+                  <Link to='/teacher' color="inherit" style={{textDecoration:'none'}}>
+                    <p className={classes.navItem}><span className={classes.hidden}>Devenir</span> Enseignant</p>
+                  </Link>
                   {/* signin && signup profile */}
                   {!props.user.authenticated?
                       <React.Fragment>

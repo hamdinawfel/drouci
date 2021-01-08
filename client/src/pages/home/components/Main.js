@@ -13,28 +13,36 @@ import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        backgroundColor:'#f9f9f9',
-        margin:'50px 100px',
-        padding:'30px 0 50px 0',
-        borderRadius:'30px',
+        // backgroundColor:'#f9f9f9',
+        // margin:'50px 100px',
+        // padding:'30px 0 50px 0',
+        marginBottom:200,
         justifyContent:'center',
-        boxShadow: '-2px 2px 12px rgba(91, 137, 158, 0.5)',
+        // boxShadow: '-2px 2px 12px rgba(91, 137, 158, 0.5)',
         textAlign:'center',
         [theme.breakpoints.down('md')]: {
             padding:'48p 0',
         }
     },
     title:{
-        margin:'auto',
+        margin:'80px 0 50px 0',
+        textAlign:'center',
         color:theme.palette.primary.title,
-        fontSize:'2rem',
-        width:600,
+        fontSize:'1.8rem',
         marginBottom:20,
         fontWeight:700,
         [theme.breakpoints.down('md')]: {
             fontSize:'1.5rem',
             width:'100%',
         }
+    },
+    borderBottom:{
+        borderBottom:'5px solid #017a9b', 
+        paddingBottom:10,
+        [theme.breakpoints.down('sm')]: {
+            borderBottom:'0px solid #017a9b', 
+           paddingBottom:0,
+         }
     },
     subTitle:{
         margin:'auto',
@@ -44,6 +52,7 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 400,
         color:theme.palette.primary.text,
         marginBottom:40,
+        marginTop:80,
         [theme.breakpoints.down('md')]: {
             padding:'0 20px',
         },
@@ -89,7 +98,11 @@ export default function Main() {
         <div className={classes.root}>
             
             <div>
-               <h2 className={classes.title}>Faites le bon choix et apprenez sur la platforme drouci.com</h2>
+               <h2 className={classes.title}>
+               <span className={classes.borderBottom}> 
+               Apprenez efficacement et plus vite
+                   </span>
+               </h2>
                <p className={classes.subTitle}>Que vous êtes en classes préparatoire MP, PC, PT ou en baccalauréat : mathématiques, SVT, techniques, economie/gestion, lettre...drouci vous permettra d'optimiser votre temps et votre argent avec un contenue personnalisé et de haut qualité</p>
             </div>
            <Grid container className={classes.cardContainer}>

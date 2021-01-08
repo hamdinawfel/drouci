@@ -121,7 +121,7 @@ export default function Hero() {
       <Grid item xs={12} md={6} className={classes.heroCta}>
         <h1 className={classes.title}>Révolutionnons l'éducation</h1>
         <p className={classes.subTitle}>Commencez nos cours en ligne de haut qualité.<br />
-          Nos cours sont conforme à l'éducation national <img src={drapeau} className={classes.drapeau} alt="Tunisie" /></p>
+          Nos cours sont conformes à l'éducation nationale <img src={drapeau} className={classes.drapeau} alt="Tunisie" /></p>
         <div style={{display:'flex', marginTop:30}}>
           <div className={classes.centerBtn}>
             <Link to='/signup'color="inherit" style={{textDecoration:'none'}}>

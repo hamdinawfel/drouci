@@ -6,31 +6,35 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        // marginTop:-100, 
-        margin:'50px 100px',
-        padding:'20px 0',
-        borderRadius:'30px',
-        boxShadow: '-2px 2px 12px rgba(91, 137, 158, 0.5)',
-        backgroundColor:'#f9f9f9',
         position:'relative'
     },
     cardContainer:{
         display:'flex',
-        margin:'35px auto',
+        // margin:'35px auto',
         justifyContent:'center',
 
     },
     headerTitle:{
-        margin:'10px 0 0 0',
+        margin:'80px 0 30px 0',
         textAlign:'center',
         color:theme.palette.primary.title,
-        fontSize:'2rem',
-        marginBottom:20,
+        fontSize:'1.8rem',
         fontWeight:700,
         [theme.breakpoints.down('md')]: {
             fontSize:'1.5rem',
-            width:'100%',
+        },
+        [theme.breakpoints.down('sm')]: {
+            margin:'50px 0 0 0',
+            fontSize:'1.3rem',
         }
+    },
+    borderBottom:{
+        borderBottom:'5px solid #017a9b', 
+        paddingBottom:10,
+        [theme.breakpoints.down('sm')]: {
+            borderBottom:'0px solid #017a9b', 
+           paddingBottom:0,
+         }
     },
     card:{
         // boxShadow: '0px 0px 10px rgba(91, 137, 158, 0.5)',
@@ -39,7 +43,7 @@ const useStyles = makeStyles(theme => ({
         padding:'20px',
         margin:'0 20px',
         [theme.breakpoints.down('xs')]: {
-            margin:'20px 20px',
+            margin:'0px 20px',
          }
     },
     icon:{
@@ -51,10 +55,13 @@ const useStyles = makeStyles(theme => ({
     },
     title:{
        textAlign:'center',
-       marginTop:30,
+       marginBottom:50,
        fontWeight:700,
        fontSize: '1.5rem',
-       color:theme.palette.primary.main
+       color:theme.palette.primary.main,
+       [theme.breakpoints.down('sm')]: {
+        marginBottom:20,
+     }
     },
     text:{
        textAlign:'center',
@@ -94,30 +101,31 @@ export default function Features() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-               <h2 className={classes.headerTitle}>Une méthodologie innovante et 100% flexible</h2>
+               <h2 className={classes.headerTitle}>
+                   <span className={classes.borderBottom}> 
+                   Une méthodologie innovante et 100% flexible
+                   </span>
+               </h2>
 
             <Grid container className={classes.cardContainer}>
               <Grid item sm={3} className={classes.card} >
-                  <img src="https://drouci-images.s3.us-east-2.amazonaws.com/education.svg" alt="seo word" style={{width:150}} className={classes.icon} />
                   <h3 className={classes.title}>Qualité</h3>
+                  <img src="https://drouci-images.s3.us-east-2.amazonaws.com/education.svg" alt="seo word" style={{width:150}} className={classes.icon} />
                   <p className={classes.text}>Nos cours sont conçus avec une méthodologie personnalisé et flexible. 
 Progressez à votre rythme avec les meilleurs enseignants de Tunisie</p>
               </Grid>
               <Grid item sm={3} className={classes.card} >
+              <h3 className={classes.title}>Disponibilité</h3>
               <img src="https://drouci-images.s3.us-east-2.amazonaws.com/learning.svg" alt="seo word" style={{width:150}} className={classes.icon} />
-                  <h3 className={classes.title}>Disponibilité</h3>
                   <p className={classes.text}>Un accés à tous le contenus grace à notre site : 24h/24h et 7j/7j
 Offrez-vous toutes les chances de réussir avec un accompagnement adapté à chaque élève et étudiant.</p>
               </Grid>
               <Grid item sm={3} className={classes.card}>
+              <h3 className={classes.title}> Conformité</h3>
               <img src="https://drouci-images.s3.us-east-2.amazonaws.com/message.svg" alt="seo word" style={{width:200}} className={classes.icon} />
-                  <h3 className={classes.title}> Conformité</h3>
                   <p className={classes.text}>Suivez les cours confortablement depuis votre canapé. Nos cours sont 100% conformes et adaptés à l'éducation nationale.</p>
               </Grid>
             </Grid>
-            <div style={{ display:'flex', justifyContent:'center', margin:'-30px 0 30px 0'}}>
-               <Button className={classes.ctaBtn}>Rejoignez Nous</Button>
-            </div>
         </div>
         
     )
