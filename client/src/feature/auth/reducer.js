@@ -2,7 +2,7 @@ import {
     SET_AUTHENTICATED,
     SET_UNAUTHENTICATED,
     LOADING_USER,
-    SET_USER,
+    GET_USER,
     SET_ERRORS,
     CLEAR_ERRORS,
     REDIRECT_USER_TO_AUTH
@@ -14,7 +14,7 @@ import {
     level:'',
     firstname:'',
     lastname:'',
-    credentials: {},
+    email:'',
     errors:{},
     path:'/dashboard'
   };
@@ -25,18 +25,20 @@ import {
         return {
           ...state,
           authenticated: true,
+          loading: true
         };
       case SET_UNAUTHENTICATED:
         return initialState;
-      case SET_USER:
+      case GET_USER:
         return {
           authenticated: true,
-          loading: false,
-          credentials: action.payload,
           level:action.payload.level,
           firstname:action.payload.firstname,
           lastname:action.payload.lastname,
-          path:  '/dashboard'
+          email: action.payload.email,
+          path:  '/dashboard',
+          loading: false,
+
         };
       case LOADING_USER:
         return {
@@ -52,7 +54,6 @@ import {
       case CLEAR_ERRORS:
         return {
           ...state,
-          loading: false,
           errors: {}
         };
       case REDIRECT_USER_TO_AUTH:

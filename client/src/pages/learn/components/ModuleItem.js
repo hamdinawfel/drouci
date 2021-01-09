@@ -103,6 +103,7 @@ function ModuleItem(props) {
 
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState('');
+  const [expanded, setExpanded] = useState(true);
 
   const handleClickOpen = (id) => {
     setOpen(true);
@@ -116,18 +117,19 @@ function ModuleItem(props) {
         sectionId  
     }
     props.markItemCompleted(completeData);
-    // setOpen(false);
 }
   const handleClose = () => {
     setOpen(false);
-    
+  }
+  const handlEexpanded = () => {
+    setExpanded(!expanded);
   }
   return (
     <div className={classes.root}>
-      <Accordion className={classes.accordion} variant="outlined">
+      <Accordion className={classes.accordion} variant="outlined" expanded={expanded}>
         <AccordionSummary
           className={classes.panelSummary}
-          expandIcon={<ExpandMoreIcon className={classes.icon}/>}
+          expandIcon={<ExpandMoreIcon className={classes.icon} onClick={handlEexpanded}/>}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >

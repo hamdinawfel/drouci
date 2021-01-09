@@ -15,21 +15,25 @@ import SchoolIcon from '@material-ui/icons/School';
 import { blue } from '@material-ui/core/colors';
 import EditIcon from '@material-ui/icons/Edit';
 import Chip from '@material-ui/core/Chip';
+import Grid from '@material-ui/core/Grid';
 //Redux
 import { connect } from 'react-redux';
 import { addUserDetail } from '../../../feature/auth/action';
 
-const levels = ['2 éme prépa MP',
+const baclevels = [
+                 'Bac Mathématique',
+                 'Bac Science',
+                 'Bac Technique',
+                 'Bac Informatique',
+                 'Bac Economie',
+                 'Bac Lettre',
+                ];
+const prepalevels = ['2 éme prépa MP',
                  '2 éme prépa PC',
                  '2 éme prépa PT',
                  '1 ére prépa MP',
                  '1 ére prépa PC',
                  '1 ére prépa PT',
-                 'Bac Mathématique',
-                 'Bac Science',
-                 'Bac Technique',
-                 'Bac Informatique',
-                 'Bac Economie & Gestion',
                 ];
 const useStyles = makeStyles((theme) => ({
     avatar: {
@@ -51,7 +55,13 @@ const useStyles = makeStyles((theme) => ({
            display:'none'
           },
       },
-      
+      category:{
+        color:'#fff',
+        padding:'10px',
+        fontWeight:600,
+        textAlign:'center',
+        backgroundColor:'#003668',
+      }
   }));
 
 function UpdateLevel(props) {
@@ -95,19 +105,39 @@ function UpdateLevel(props) {
         />
        <EditIcon color="primary" fontSize='small' className={classes.updateIcon} onClick={handleClickOpen}/>
        <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open} style={{overflowY:'hidden'}}>
-      <DialogTitle style={{color:'#f44336'}} id="simple-dialog-title">Vous êtes sérieux de modifier votre niveau ?</DialogTitle>
-      <List>
-        {levels.map((level) => (
-          <ListItem button onClick={() => handleListItemClick(level)} key={level}>
-            <ListItemAvatar>
-              <Avatar className={classes.avatar} style={{backgroundColor: selected === level?'rgba(16, 170, 80, 0.4)':''}}>
-                <SchoolIcon  style={{color: selected === level?'#10AA50':''}}/>
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText primary={level} style={{color: selected === level?'#10AA50':''}}/>
-          </ListItem>
-        ))}
-      </List>
+      <DialogTitle style={{color:'#f44336', padding:'20px 50px 0 50px'}} id="simple-dialog-title">Vous êtes sérieux de modifier votre niveau ?</DialogTitle>
+      <Grid container>
+        <Grid item md={6}style={{padding:10}}>
+          <p className={classes.category}>Préparatoire</p>
+          <List>
+          {prepalevels.map((level) => (
+            <ListItem button onClick={() => handleListItemClick(level)} key={level}>
+              <ListItemAvatar>
+                <Avatar className={classes.avatar} style={{backgroundColor: selected === level?'rgba(16, 170, 80, 0.4)':''}}>
+                  <SchoolIcon style={{color: selected === level?'#10AA50':''}}/>
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary={level} style={{color: selected === level?'#10AA50':''}}/>
+            </ListItem>
+          ))}
+        </List>
+        </Grid>
+        <Grid item md={6} style={{padding:10}}>
+        <p className={classes.category}>Baccalauréat</p>
+          <List>
+          {baclevels.map((level) => (
+            <ListItem button onClick={() => handleListItemClick(level)} key={level}>
+              <ListItemAvatar>
+                <Avatar className={classes.avatar} style={{backgroundColor: selected === level?'rgba(16, 170, 80, 0.4)':''}}>
+                  <SchoolIcon style={{color: selected === level?'#10AA50':''}}/>
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary={level} style={{color: selected === level?'#10AA50':''}}/>
+            </ListItem>
+          ))}
+        </List>
+        </Grid>
+      </Grid>
       <DialogActions>
           <Button onClick={handleClose} color="primary">
             Annuler

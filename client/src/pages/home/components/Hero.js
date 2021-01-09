@@ -7,7 +7,8 @@ import Button from '@material-ui/core/Button';
 
 //images
 import drapeau from '../assets/drapeau.png'
-
+//Redux
+import { connect } from 'react-redux';
 const useStyles = makeStyles((theme) => ({
     root:{
       padding:'120px 100px 45px 100px',
@@ -113,7 +114,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function Hero() {
+function Hero(props) {
   const classes = useStyles();
 
   return (
@@ -124,9 +125,11 @@ export default function Hero() {
           Nos cours sont conformes à l'éducation nationale <img src={drapeau} className={classes.drapeau} alt="Tunisie" /></p>
         <div style={{display:'flex', marginTop:30}}>
           <div className={classes.centerBtn}>
+            { props.authenticated?
+            null:
             <Link to='/signup'color="inherit" style={{textDecoration:'none'}}>
               <Button className={classes.ctaBtn}>Rejoignez Nous</Button>
-            </Link>
+            </Link> }
           </div>
         </div>
       </Grid>
@@ -136,4 +139,11 @@ export default function Hero() {
     </Grid>
   );
 }
+const mapStateToProps = (state) => ({
+  authenticated: state.user.authenticated
+});
 
+export default connect(
+  mapStateToProps,
+  null
+)(Hero);

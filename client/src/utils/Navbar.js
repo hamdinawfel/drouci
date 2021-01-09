@@ -16,6 +16,8 @@
   import ExpandMore from '@material-ui/icons/ExpandMore';
   import Button from '@material-ui/core/Button';
   import ListItemIcon from '@material-ui/core/ListItemIcon';
+  import CircularProgress from '@material-ui/core/CircularProgress';
+
   //M-UI icon
   import MenuIcon from '@material-ui/icons/Menu';
   import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone';
@@ -363,7 +365,7 @@
       tooltip: {
         backgroundColor: '#fff',
         border: '1px solid rgba(0, 0, 0, 0.2)',
-        height:'270px',
+        height:'220px',
         padding:15,
         marginTop:20,
         color: 'rgba(0, 0, 0, 0.87)',
@@ -388,9 +390,9 @@
         props.logoutUser()
         console.log('logout')
       }
-        const firstChart = props.user.loading === false && props.user.credentials.firstname ? <Fragment>{props.user.credentials.firstname[0]}{props.user.credentials.lastname[0]}</Fragment>:null
-        const name = props.user.loading === false && props.user.credentials.firstname ? <Fragment>{props.user.credentials.firstname} {props.user.credentials.lastname}</Fragment>:<Fragment>loading...</Fragment>
-        const email = props.user.loading === false && props.user.credentials.firstname ? <Fragment>{props.user.credentials.email}</Fragment>:<Fragment>loading...</Fragment>
+        const firstChart = props.user.loading === false? <Fragment>{props.user.firstname[0]}{props.user.lastname[0]}</Fragment>:<CircularProgress style={{marginTop:10}}/>
+        const name = props.user.loading === false && props.user.firstname ? <Fragment>{props.user.firstname} {props.user.lastname}</Fragment>:<Fragment>loading...</Fragment>
+        const email = props.user.loading === false && props.user.firstname ? <Fragment>{props.user.email}</Fragment>:<Fragment>loading...</Fragment>
       return (
           <React.Fragment>
             <Grid container className={classes.root}>
@@ -404,8 +406,8 @@
                         </Link>
                         :
                         <Link to='/dashboard' color="inherit" style={{textDecoration:'none', display:'flex'}}>
-                          <img src={logo} alt ="logo" style={{ width: 100}}/>
-                          <p style={{color:'#017a9b', fontSize:'2rem', margin:'10px 0 0 0', fontWeight:900, userSelect:'none'}}>drouci</p>
+                         <img src={logo} alt ="logo" style={{ width:60 , height:60,marginTop:5,userSelect:'none' }}  className={classes.logo}/>
+                          <h1 style={{color:'#017a9b', fontSize:'2rem', margin:'15px 0 0 0',height:60,  marginTop:10, fontWeight:800, userSelect:'none'}}>drouci</h1>
                         </Link>
                        }
                     </div>
@@ -457,6 +459,8 @@
                         </Link>
                       </React.Fragment>:
                       <div>
+                        {props.user.loading?
+                        <CircularProgress style={{marginTop:10}}/>:
                         <HoverProfileCard interactive
                           title={
                             <div>
@@ -474,7 +478,7 @@
                                 <Divider style={{ margin:'15px -15px'}}/>
                                 <div style={{textAlign:'center'}}>
                                   {/* <Link to='/dashboard'color="inherit" style={{textDecoration:'none'}}> */}
-                                    <p className={classes.avatarButton}>Mon Profile</p>
+                                    {/* <p className={classes.avatarButton}>Mon Profile</p> */}
                                   {/* </Link> */}
                                 </div>
                                 <div style={{textAlign:'center'}}>
@@ -495,7 +499,7 @@
                     >
                         
                       <Avatar className={classes.avatar}>{firstChart}</Avatar>
-                    </HoverProfileCard>
+                    </HoverProfileCard>}
                       </div>}
                 </Grid>
                 <MobileDrawer toggleDrawer={toggleDrawer} handleClose={handleClose} open={open}/>

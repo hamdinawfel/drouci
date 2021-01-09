@@ -1,6 +1,6 @@
 import {
     LOADING_USER,
-    SET_USER,
+    GET_USER,
     SET_ERRORS,
     CLEAR_ERRORS,
     SET_AUTHENTICATED,
@@ -15,15 +15,17 @@ import {
     axios
       .post("/users/login", userData)
       .then(res => { 
+        console.log(res.data.success)
         dispatch({ type: SET_AUTHENTICATED });
         setAuthorizationHeader(res.data.token);
         dispatch(getUserData());
         dispatch({ type: CLEAR_ERRORS });
       })
       .catch(err =>
+        // console.log(err.response.data)
         dispatch({
           type: SET_ERRORS,
-          payload: err.response
+          payload: err.response.data
         })
       );
   };
@@ -60,7 +62,7 @@ import {
       .get(`/users/${decodedToken._id}`)
       .then((res) => {
         dispatch({
-          type: SET_USER,
+          type: GET_USER,
           payload: res.data
         });
       })

@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 //M-UI
 import { makeStyles } from "@material-ui/core/styles";
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 //Componetnts
 import Header from './components/Header'
 import Wishlist from './components/Wishlist'
@@ -21,13 +23,17 @@ function Dashbord (props) {
     return (
         <div className={classes.root}>
           {props.user.loading?
-            <p style={{marginTop:300, textAlign:'center'}}>loading</p>
+              <div style={{display:'flex', justifyContent:'center', alignItems:'center', height:200, backgroundColor:'#F3F3F3'}}>
+                <CircularProgress />
+              </div>
             :
             <div>
             <Header />
             <Wishlist />
             <Courses />
+            {/* <p> dashbord fff</p> */}
             </div>}
+
         </div>   
     )
 }

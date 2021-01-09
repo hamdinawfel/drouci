@@ -29,8 +29,8 @@ marginTop:100
     alignItems: 'center',
   },
   title: {
-   color:theme.palette.primary.main,
-   fontWeight:900,
+    color:theme.palette.primary.title,
+    fontWeight:900,
    fontSize:30,
    marginBottom:20
   },
@@ -88,12 +88,12 @@ const handleSignupUser = (e) => {
 
   return (
     <React.Fragment>
-        {!props.user.authenticated ?null:<Redirect to={props.user.path}/>}
+          {!props.user.loading === true?null:<Redirect to={props.user.path}/>}
         <Container className={classes.root} component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
             <Typography className={classes.title} component="h1" variant="h5">
-            Bienvenue en DROUCI
+            Bienvenue en drouci
             </Typography>
             {!props.user.errors.err?null:<div className={classes.error}>
              <p className={classes.errorText}>Cette adresse email est déjà utilisée.</p>
@@ -145,18 +145,18 @@ const handleSignupUser = (e) => {
                 onChange={(e)=>setLevel(e.target.value)}
                 label="Sélectionnez votre niveau"
               >
-                <MenuItem value="bacMath"></MenuItem>
-                <MenuItem value="bacMath">2 éme MP</MenuItem>
-                <MenuItem value="bacMath">2 éme PC</MenuItem>
-                <MenuItem value="bacMath"> 2 éme PT</MenuItem>
-                <MenuItem value="bacMath"> 1 ére MP</MenuItem>
-                <MenuItem value="bacMath">1 ére PC</MenuItem>
-                <MenuItem value="bacMath">1 ére pT</MenuItem>
-                <MenuItem value="bacMath"> Bac Mathématique</MenuItem>
-                <MenuItem value="bacScience">Bac Science</MenuItem>
-                <MenuItem value="bacInformatique">Bac Informatique</MenuItem>
-                <MenuItem value="bacEconomieGestion">Bac Economie & Gestion </MenuItem>
-                <MenuItem value="bacLettre">Bac Lettre </MenuItem>
+                {/* <MenuItem value="bacMath"></MenuItem> */}
+                <MenuItem value="2 éme prépa MP">2 éme prépa MP</MenuItem>
+                <MenuItem value="2 éme prépa PC">2 éme prépa PC</MenuItem>
+                <MenuItem value="2 éme prépa PT"> 2 éme prépa PT</MenuItem>
+                <MenuItem value="1 ére prépa MP"> 1 ére prépa MP</MenuItem>
+                <MenuItem value="1 ére prépa PC">1 ére prépa PC</MenuItem>
+                <MenuItem value="1 ére prépa PT">1 ére prépa PT</MenuItem>
+                <MenuItem value="Bac Mathématique"> Bac Mathématique</MenuItem>
+                <MenuItem value="Bac Science">Bac Science</MenuItem>
+                <MenuItem value="Bac Informatique">Bac Informatique</MenuItem>
+                <MenuItem value="Bac Economie & Gestion ">Bac Economie & Gestion </MenuItem>
+                <MenuItem value="Bac Lettre">Bac Lettre </MenuItem>
               </Select>
           </FormControl>
             <Button

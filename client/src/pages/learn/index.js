@@ -2,22 +2,21 @@ import React , { useState, useEffect }from 'react'
 import { useParams } from "react-router-dom";
 //M-UI
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 //Componets
 import ModuleItem from './components/ModuleItem'
-
+import Header from './components/Header'
 //Redux
 import { connect } from 'react-redux';
 import { getMyCourse, markItemCompleted } from './action';
 
 const useStyles = makeStyles(theme => ({
     root: {
-       marginTop:60,
-       width:'100%',
+        margin:'100px',
+        [theme.breakpoints.down('md')]: {
+            margin:'100px 20px', 
+          }
     },
    header:{
        width:'100%',
@@ -153,9 +152,6 @@ function Learn(props) {
     const { title, description, imageUrl, price, duration, sectionsNumber, modules } = props.learn.course
     const modulesMarkup = props.learn.loading === false && modules?
     <div>
-        <Typography className={classes.purshaseOption} color="textSecondary" gutterBottom>
-        • {sectionsNumber} sections • {duration}
-         </Typography>
         {modules.map(module => <ModuleItem key={module._id}module={module} />)}
     </div>:<p>loading</p>
 const titlemarkup = props.learn.loading?
@@ -164,38 +160,20 @@ const titlemarkup = props.learn.loading?
 <h1 className={classes.title}>{title}</h1>
     return (
         <div className={classes.root}>
-            <div className={classes.header}>
-               {titlemarkup}
-            </div>
-            <Grid container>
-                   <Grid item xs={12} md={8} className={classes.videoSection}>
-                   <video className={classes.video} controls>
-                        { props.learn.loading === false && modules?<source src={modules[0].sections[0].videoUrl} type="video/mp4" />:null}
-                    </video>
-                    <p className={classes.objectifTitle}>Description</p>
-                    <p className={classes.text}>
-                        { description }
-                    </p>
-                    <p className={classes.objectifTitle}>Contenu du cours</p>
-                     {modulesMarkup}
-                   </Grid>
-                   <Grid item xs={12} md={3} className={classes.sideSection}>
-                        <img src={imageUrl} alt={title} className={classes.image} />
-                        <p className={classes.cardtitle}>{title}</p>
-                        <p className={classes.objectifTitle}>{price} DT</p>
-                        <p className={classes.purshaseText}>Ce cours comprend :</p>
-                        <Typography className={classes.purshaseOption} color="textSecondary" gutterBottom>
-                           • {duration} vidéos
-                        </Typography>
-                        <Typography className={classes.purshaseOption} color="textSecondary" gutterBottom>
-                           • {sectionsNumber} Sections
-                        </Typography>
-                        <Typography className={classes.purshaseOption} color="textSecondary" gutterBottom>
-                           • Accès illimité
-                        </Typography>
-
-                   </Grid>
-               </Grid>
+            {
+                props.learn.loading?
+                <div style={{ display:'flex', justifyContent:'center',height:'200px'}}>
+                    <CircularProgress />
+                </div>
+                :
+              <React.Fragment>
+                <Header course={props.learn.course} completedSections={props.learn.completedSections}/>
+                <div >
+                <p className={classes.objectifTitle}>Contenu du cours</p>
+                    {modulesMarkup}
+                </div>  
+              </React.Fragment>
+            }          
         </div>
     )
 }

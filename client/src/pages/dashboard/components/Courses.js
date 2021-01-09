@@ -93,14 +93,14 @@ function Courses(props) {
     // let { level } = useParams();
     useEffect(() => {
         props.getCoursesByLevel(props.user.level)
-        console.log(props.user.level)
+        console.log(props.user)
       }, []);
 
-    const { loading, credentials } = props.user
+    const { loading,  } = props.user
       
     return (
         <div className={classes.root}>
-             <p className={classes.header}>Tout les cours pour {credentials.level}</p>
+             <p className={classes.header}>Tout les cours pour {props.user.level}</p>
              <div className={classes.divider}/>
            { 
            !props.courses.loading?

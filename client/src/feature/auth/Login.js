@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
       },
       title: {
-       color:theme.palette.primary.main,
+       color:theme.palette.primary.title,
        fontWeight:900,
        fontSize:30,
        marginBottom:20
@@ -67,7 +67,6 @@ const handleLoginUser = (e) => {
       password,
     };
     props.loginUser(userData)
-    console.log(props.user.loading)
   }
 
   
@@ -80,7 +79,7 @@ const handleLoginUser = (e) => {
 
   return (
     <React.Fragment>
-          {!props.user.authenticated ?null:<Redirect to={props.user.path}/>}
+          {!props.user.loading === true?null:<Redirect to={props.user.path}/>}
         <Container className={classes.root} component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -119,17 +118,20 @@ const handleLoginUser = (e) => {
             value={password}
             onChange={(e)=>setPassword(e.target.value)}
           />
-        
+        {/* {props.user.loading?<p>loading</p>:<p>sayar</p>} */}
+         {/* <Link> */}
           <Button
-            type="submit"
-            fullWidth
-            disabled={props.user.loading}
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            SE CONNECTER
-          </Button>
+              type="submit"
+              fullWidth
+              disabled={props.user.loading}
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              SE CONNECTER
+            </Button>
+         {/* </Link> */}
+          
           <Grid item>
               <Link href="/signup" variant="body2">
                 {"Vous n'avez pas encore de compte ? Inscrivez-vous gratuitement en 30s."}

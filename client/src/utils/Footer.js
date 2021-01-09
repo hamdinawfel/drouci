@@ -18,7 +18,7 @@ import logo from '../pages/home/assets/logoFooter.png'
 function Copyright() {
   const classes = useStyles();
   return (
-    <Typography variant="body2" className={classes.copyright} color="#fff">
+    <Typography variant="body2" className={classes.copyright}>
       {'Copyright © '} drouci.com {' '}
       {new Date().getFullYear()}
       {'.'}
@@ -103,9 +103,9 @@ export default function Footer() {
              <a href='/' style={{color:'inherit', textDecoration:'none'}}>
            <p className={classes.subTitle}> <YouTubeIcon style={{verticalAlign:'middle', marginRight:10}}/>Youtube</p>
            </a>
-           <a href='/' style={{color:'inherit', textDecoration:'none'}}>
+           <Link to={{ pathname: "https://www.linkedin.com/company/drouci/" }} target="_blank"  style={{color:'inherit', textDecoration:'none'}}>
              <p className={classes.subTitle}> <LinkedInIcon style={{verticalAlign:'middle', marginRight:10}}/>Lenkedin</p>
-           </a>          
+           </Link>          
         </Grid>
         <Grid item xs={12} sm={3}>
           <p className={classes.title}>Contactez Nous</p>
@@ -116,7 +116,7 @@ export default function Footer() {
       </Grid>
       <Divider />
       <Grid container className={classes.footer}>
-        <Grid item xs={0} sm={5} className={classes.diplay}>
+        <Grid item xs={12} sm={5} className={classes.diplay}>
           <div style={{display:'flex'}}>
             <img src={logo} alt ="logo" style={{ width:60 , height:60,userSelect:'none', marginTop:5 }}/>
             <h1 style={{color:'#fff', fontSize:'2rem', margin:'15px 0 0 0', fontWeight:800, userSelect:'none'}}>drouci</h1>
@@ -126,7 +126,7 @@ export default function Footer() {
              Condition d'utilisation
             </Typography> */}
         </Grid>
-        <Grid item xs={0} sm={4} className={classes.diplay} style={{paddingLeft:70}}>
+        <Grid item xs={12} sm={4} className={classes.diplay} style={{paddingLeft:70}}>
             {/* <Typography variant="body2" color="#fff" style={{color:'#fff'}}>
                Confidentialité
             </Typography> */}

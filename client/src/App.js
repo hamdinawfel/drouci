@@ -75,12 +75,14 @@ function App() {
                   <Route  exact path="/catalog/:level" component={Catalog} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/signup" component={Signup} />
-                  <PrivateRoute exact path="/dashboard" component={Dashboard} />
-                  <PrivateRoute exact path="/learn/:wishlistId" component={Learn} />
+                  <Route exact path="/dashboard" component={Dashboard} />
+                  {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
+                  <Route exact path="/learn/:wishlistId" component={Learn} />
+                  {/* <PrivateRoute exact path="/learn/:wishlistId" component={Learn} /> */}
                 </Switch>
               </div>
-          </Router>
           <Footer />
+          </Router>
       </ThemeProvider>
     </Provider>
   );

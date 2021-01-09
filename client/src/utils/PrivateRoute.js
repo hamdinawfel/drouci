@@ -5,11 +5,12 @@ const PrivateRoute = ({ component: Component, authenticated, loading, ...rest })
   <Route
     {...rest}
     render={props =>
-        localStorage.jwtToken && !loading ? (
+        // localStorage.jwtToken && !loading ? (
+         !loading ? (
         <Component {...props} />
       ) : (
-        // <Redirect to="/" />
-        null
+        <Redirect to="/dashboardttt" />
+        
       )
     }
   />

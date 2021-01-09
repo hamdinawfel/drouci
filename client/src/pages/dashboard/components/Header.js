@@ -75,9 +75,9 @@ function Header(props) {
           {!props.user.loading?<Avatar variant='rounded' className={classes.avatar}>{props.user.firstname[0]}{props.user.lastname[0]}</Avatar>:null}
         </Grid>
         <Grid item xs={10}>
-           <p className={classes.name}>Bienvenu <span style={{textTransform:'capitalize'}}>{props.user.credentials.firstname} {props.user.credentials.lastname}</span></p>
+           <p className={classes.name}>Bienvenu <span style={{textTransform:'capitalize'}}>{props.user.firstname} {props.user.lastname}</span></p>
             <div style={{display:'flex'}}>
-                <p className={classes.level}> <SchoolIcon style={{color:"#003668", marginRight:10, verticalAlign:'middle'}}/>{props.user.credentials.level}</p>
+                <p className={classes.level}> <SchoolIcon style={{color:"#003668", marginRight:10, verticalAlign:'middle'}}/>{props.user.level}</p>
               <UpdateLevel />
             </div>
         </Grid>
