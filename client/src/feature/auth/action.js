@@ -42,7 +42,7 @@ import {
       .catch(err =>
         dispatch({
           type: SET_ERRORS,
-          payload: err.response
+          payload: err.response.data
 
         })
       );
@@ -84,7 +84,6 @@ import {
   }
   export const addUserDetail = (userData) => (dispatch) => {
     dispatch({ type: ADD_USER_DETAILS });
-    const token = localStorage.getItem("jwtToken");
     axios
     .put('/users/', userData)
     .then(res => { 

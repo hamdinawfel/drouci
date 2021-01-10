@@ -103,7 +103,7 @@ export default function Main() {
                Apprenez efficacement et plus vite
                    </span>
                </h2>
-               <p className={classes.subTitle}>Que vous êtes en classes préparatoire MP, PC, PT ou en baccalauréat : mathématiques, SVT, techniques, economie/gestion, lettre...drouci vous permettra d'optimiser votre temps et votre argent avec un contenue personnalisé et de haut qualité</p>
+               <p className={classes.subTitle}>Que vous soyez en classes préparatoire MP, PC, PT ou en baccalauréat : mathématiques, SVT, techniques, economie/gestion, lettres...drouci vous permettra d'optimiser votre temps et votre argent avec un contenu personnalisé et de haute qualité</p>
             </div>
            <Grid container className={classes.cardContainer}>
               <Grid item xs={12} md={6}>
@@ -115,7 +115,7 @@ export default function Main() {
                                 Préparatoire
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                  Révision mathématique, physique et inforamatique pour les coucours des classes préparatoires
+                                Cours et exercices pour toutes les matières. Le contenu est adapté pour les étudiants en classes préparatoires en Tunisie et conforme à l'éducation nationale.
                                 </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -138,7 +138,7 @@ export default function Main() {
                                     Baccalauréat
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                    Cours et exercices athématiques, physique, inforamatique pour toute les classe de baccalauréat
+                                Cours et exercices pour toutes les matières. Le contenu est adapté pour les bacheliers en classes préparatoires en Tunisie et conforme à l'éducation nationale.
                                 </Typography>
                                 </CardContent>
                             </CardActionArea>

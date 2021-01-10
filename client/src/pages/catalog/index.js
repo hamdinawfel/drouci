@@ -1,5 +1,4 @@
 import React, {useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
 //M-UI
 import { makeStyles } from "@material-ui/core/styles";
 import Radio from '@material-ui/core/Radio';
@@ -7,12 +6,10 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import RadioGroup from '@material-ui/core/RadioGroup';
-import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
 import Collapse from '@material-ui/core/Collapse';
 import Divider from '@material-ui/core/Divider';
 //M-ui icons
-import DoneIcon from '@material-ui/icons/Done';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 //Components
@@ -22,7 +19,6 @@ import LoadingCard from './components/LoadingCard'
 import { connect } from 'react-redux';
 import { getCoursesByLevel, getCoursesByCategory } from './action';
 
-const matieres = [ "Mathématique", "Physique", "Chimie"]
 const useStyles = makeStyles(theme => ({
     root: {
       marginTop:150
@@ -119,8 +115,6 @@ function Catalog(props) {
     const handleBac = () => {
         setOpenBac(!openBac);
     };
-    
-    let { level } = useParams();
     useEffect(() => {
        props.getCoursesByLevel(value)
     }, []);

@@ -8,7 +8,7 @@ import { ThemeProvider } from '@material-ui/styles';
 //UTILS
 import Footer from './utils/Footer'
 import Navbar from './utils/Navbar'
-import PrivateRoute from './utils/PrivateRoute'
+// import PrivateRoute from './utils/PrivateRoute'
 //pages
 import Home from './pages/home/index'
 import Learn from './pages/learn/index'

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router'
+
 //M-UI
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -119,9 +121,10 @@ function Hero(props) {
 
   return (
     <Grid container className={classes.root}>
+          {!props.authenticated?null:<Redirect to='/dashboard'/>}
       <Grid item xs={12} md={6} className={classes.heroCta}>
         <h1 className={classes.title}>Révolutionnons l'éducation</h1>
-        <p className={classes.subTitle}>Commencez nos cours en ligne de haut qualité.<br />
+        <p className={classes.subTitle}>Commencez nos cours en ligne de haute qualité.<br />
           Nos cours sont conformes à l'éducation nationale <img src={drapeau} className={classes.drapeau} alt="Tunisie" /></p>
         <div style={{display:'flex', marginTop:30}}>
           <div className={classes.centerBtn}>

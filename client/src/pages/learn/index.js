@@ -1,4 +1,4 @@
-import React , { useState, useEffect }from 'react'
+import React , { useEffect }from 'react'
 import { useParams } from "react-router-dom";
 //M-UI
 import { makeStyles } from "@material-ui/core/styles";
@@ -149,7 +149,7 @@ function Learn(props) {
         props.getMyCourse(wishlistId) 
     },[]);
     
-    const { title, description, imageUrl, price, duration, sectionsNumber, modules } = props.learn.course
+    const { title, modules } = props.learn.course
     const modulesMarkup = props.learn.loading === false && modules?
     <div>
         {modules.map(module => <ModuleItem key={module._id}module={module} />)}

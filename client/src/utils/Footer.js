@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
 import { Grid } from '@material-ui/core';
 //M-UI ICONS
 
@@ -89,7 +88,7 @@ export default function Footer() {
         <Grid item xs={12} sm={5}>
            {/* <img src={logo}  alt={logo} style={{ width : 120, margin:'10px 0 -10px 0'}}/> */}
            <p className={classes.title}>Qui Somme Nous?</p>
-          <p style={{fontSize: '18px', fontWeight: 300, color:'#fff'}}>Nous construisons l'avenir de l'apprentissage numérique en Afrique du Nord et de Monyen-Orient (réqion MENA).</p>
+          <p style={{fontSize: '18px', fontWeight: 300, color:'#fff'}}>Nous construisons l'avenir de l'apprentissage numérique en Afrique et de Monyen Orient.</p>
           <p style={{fontSize: '18px', fontWeight: 300, color:'#fff'}}>La platforme drouci vise à personnaliser l'éducation national et à mettre en oeuvre des contenus de haute qualité pour les étudiants.</p>
         </Grid>
         <Grid item xs={12} sm={4} className={classes.social}>
@@ -118,8 +117,8 @@ export default function Footer() {
       <Grid container className={classes.footer}>
         <Grid item xs={12} sm={5} className={classes.diplay}>
           <div style={{display:'flex'}}>
-            <img src={logo} alt ="logo" style={{ width:60 , height:60,userSelect:'none', marginTop:5 }}/>
-            <h1 style={{color:'#fff', fontSize:'2rem', margin:'15px 0 0 0', fontWeight:800, userSelect:'none'}}>drouci</h1>
+            <img src={logo} alt ="logo" style={{ width:50 , height:50 ,userSelect:'none', marginTop:15 }}/>
+            <h1 style={{color:'#fff', fontSize:'2rem', margin:'15px 0 0 0', fontWeight:700, userSelect:'none'}}>drouci</h1>
           </div>
 {/* 
           <Typography variant="body2" color="#fff" style={{color:'#fff'}}>

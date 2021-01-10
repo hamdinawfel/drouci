@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import {Link } from "react-router-dom"
-import { useParams } from "react-router-dom";
 //M-UI
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from '@material-ui/core/Grid';
@@ -8,16 +7,10 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
-
 //Redux
 import { connect } from 'react-redux';
 import { getCoursesByLevel } from '../../catalog/action';
-
-
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -66,13 +59,6 @@ const useStyles = makeStyles(theme => ({
               width="100px"
               image={props.course.imageUrl}
               title="Contemplative Reptile"/>
-              {/* <GridListTileBar
-                titlePosition="top"
-                title={<PlayCircleOutlineIcon className={classes.videoIcon} />}
-                classes={{
-                  root: classes.titleBar,
-                }}
-              /> */}
           </GridListTile>
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
@@ -90,14 +76,10 @@ const useStyles = makeStyles(theme => ({
 
 function Courses(props) {
     const classes = useStyles();
-    // let { level } = useParams();
     useEffect(() => {
-        props.getCoursesByLevel(props.user.level)
-        console.log(props.user)
-      }, []);
-
-    const { loading,  } = props.user
-      
+        props.getCoursesByLevel(props.user.level);
+    }, []);
+   
     return (
         <div className={classes.root}>
              <p className={classes.header}>Tout les cours pour {props.user.level}</p>

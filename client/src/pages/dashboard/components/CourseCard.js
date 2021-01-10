@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   description:{
     padding:'10px 0 0 30px',
     [theme.breakpoints.down('sm')]: {
-      padding:'0',
+      padding:'20px',
 
    }
   }

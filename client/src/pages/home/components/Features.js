@@ -2,7 +2,6 @@ import React from 'react'
 //M-UI
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -111,17 +110,17 @@ export default function Features() {
               <Grid item sm={3} className={classes.card} >
                   <h3 className={classes.title}>Qualité</h3>
                   <img src="https://drouci-images.s3.us-east-2.amazonaws.com/education.svg" alt="Qualité" style={{width:150}} className={classes.icon} />
-                  <p className={classes.text}>Nos cours sont conçus avec une méthodologie personnalisé et flexible. 
+                  <p className={classes.text}>Nos cours sont conçus avec une méthodologie personnalisée et flexible. 
 Progressez à votre rythme avec les meilleurs enseignants de Tunisie</p>
               </Grid>
               <Grid item sm={3} className={classes.card} >
               <h3 className={classes.title}>Disponibilité</h3>
               <img src="https://drouci-images.s3.us-east-2.amazonaws.com/learning.svg" alt="Disponibilité" style={{width:150}} className={classes.icon} />
-                  <p className={classes.text}>Un accés à tous le contenus grace à notre site : 24h/24h et 7j/7j
+                  <p className={classes.text}>Un accés à tous les contenus grace à notre site : 24h/24h et 7j/7j
 Offrez-vous toutes les chances de réussir avec un accompagnement adapté à chaque élève et étudiant.</p>
               </Grid>
               <Grid item sm={3} className={classes.card}>
-              <h3 className={classes.title}> Conformité</h3>
+              <h3 className={classes.title}>Conformité</h3>
               <img src="https://drouci-images.s3.us-east-2.amazonaws.com/message.svg" alt="Qualité" style={{width:180}} className={classes.icon} />
                   <p className={classes.text}>Suivez les cours confortablement depuis votre canapé. Nos cours sont 100% conformes et adaptés à l'éducation nationale.</p>
               </Grid>
