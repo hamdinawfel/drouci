@@ -88,8 +88,8 @@ export default function Footer() {
         <Grid item xs={12} sm={5}>
            {/* <img src={logo}  alt={logo} style={{ width : 120, margin:'10px 0 -10px 0'}}/> */}
            <p className={classes.title}>Qui Somme Nous?</p>
-          <p style={{fontSize: '18px', fontWeight: 300, color:'#fff'}}>Nous construisons l'avenir de l'apprentissage numérique en Afrique et de Monyen Orient.</p>
-          <p style={{fontSize: '18px', fontWeight: 300, color:'#fff'}}>La platforme drouci vise à personnaliser l'éducation national et à mettre en oeuvre des contenus de haute qualité pour les étudiants.</p>
+          <p style={{fontSize: '18px', fontWeight: 300, color:'#fff'}}>Nous construisons l'avenir de l'apprentissage numérique en Afrique et moyen orient.</p>
+          <p style={{fontSize: '18px', fontWeight: 300, color:'#fff'}}>La platforme drouci vise à personnaliser l'éducation nationale et à mettre en oeuvre des contenus de haute qualité pour les étudiants.</p>
         </Grid>
         <Grid item xs={12} sm={4} className={classes.social}>
           <p className={classes.title}>Suivez Nous</p>
@@ -103,7 +103,7 @@ export default function Footer() {
            <p className={classes.subTitle}> <YouTubeIcon style={{verticalAlign:'middle', marginRight:10}}/>Youtube</p>
            </a>
            <Link to={{ pathname: "https://www.linkedin.com/company/drouci/" }} target="_blank"  style={{color:'inherit', textDecoration:'none'}}>
-             <p className={classes.subTitle}> <LinkedInIcon style={{verticalAlign:'middle', marginRight:10}}/>Lenkedin</p>
+             <p className={classes.subTitle}> <LinkedInIcon style={{verticalAlign:'middle', marginRight:10}}/>Linkedin</p>
            </Link>          
         </Grid>
         <Grid item xs={12} sm={3}>
