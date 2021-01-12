@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
         verticalAlign:'middle',
         [theme.breakpoints.down('xs')]: {
           marginLeft:2,
-          width:20,
+          width:15,
       }
     },
     image:{
