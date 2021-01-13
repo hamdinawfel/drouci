@@ -138,7 +138,7 @@ export default function Main() {
                                     Baccalauréat
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                Cours et exercices pour toutes les matières. Le contenu est adapté pour les bacheliers en classes préparatoires en Tunisie et conforme à l'éducation nationale.
+                                Cours et exercices pour toutes les matières. Le contenu est adapté pour les bacheliers en Tunisie et conforme à l'éducation nationale.
                                 </Typography>
                                 </CardContent>
                             </CardActionArea>

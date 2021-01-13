@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "drouci",
+  "name": "drouci : cours en ligne pour le lycée et les classes préparatoires",
   "icons": [
     {
       "src": "favicon.ico",

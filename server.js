@@ -1,16 +1,22 @@
 require('dotenv').config()
 const express = require('express')
-const app = express()
+var sslRedirect = require('heroku-ssl-redirect').default;
 var cors = require('cors')
 const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
 const passport = require("passport");
+
+
+
 //Load routes
 const users = require("./routes/users");
 const courseRouter = require("./routes/courseRouter");
 const catalogRouter = require("./routes/catalogRouter");
 const wishlistRouter = require("./routes/wishlistRouter");
+
+const app = express()
+app.use(sslRedirect());
 
 // Connect to MongoDB
 // const url = 'mongodb://localhost:27017/tomoro'; 
