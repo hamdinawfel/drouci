@@ -93,15 +93,16 @@ export default function Footer() {
         </Grid>
         <Grid item xs={12} sm={4} className={classes.social}>
           <p className={classes.title}>Suivez Nous</p>
-          <a href='/' style={{color:'inherit', textDecoration:'none'}}>
+          
+          <Link to={{ pathname: "https://www.facebook.com/drouci-%D8%AF%D8%B1%D9%88%D8%B3%D9%8A-100166455403093/?view_public_for=100166455403093" }} target="_blank"  style={{color:'inherit', textDecoration:'none'}}>
              <p className={classes.subTitle}> <FacebookIcon style={{verticalAlign:'middle', marginRight:10}}/>Facebook</p>
-           </a>
-           <a href='/' style={{color:'inherit', textDecoration:'none'}}>
+           </Link> 
+           <Link to={{ pathname: "https://www.facebook.com/drouci-%D8%AF%D8%B1%D9%88%D8%B3%D9%8A-100166455403093/?view_public_for=100166455403093" }} target="_blank"  style={{color:'inherit', textDecoration:'none'}}>
              <p className={classes.subTitle}> <InstagramIcon style={{verticalAlign:'middle', marginRight:10}}/>Instagram</p>
-           </a>
-             <a href='/' style={{color:'inherit', textDecoration:'none'}}>
+           </Link> 
+           <Link to={{ pathname: "https://www.youtube.com/channel/UCrZiarAk-m17OcCMWWx2Ayg" }} target="_blank"  style={{color:'inherit', textDecoration:'none'}}>
            <p className={classes.subTitle}> <YouTubeIcon style={{verticalAlign:'middle', marginRight:10}}/>Youtube</p>
-           </a>
+           </Link> 
            <Link to={{ pathname: "https://www.linkedin.com/company/drouci/" }} target="_blank"  style={{color:'inherit', textDecoration:'none'}}>
              <p className={classes.subTitle}> <LinkedInIcon style={{verticalAlign:'middle', marginRight:10}}/>Linkedin</p>
            </Link>          

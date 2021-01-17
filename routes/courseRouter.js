@@ -3,8 +3,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const Courses = require('../models/courses');
 var authenticate = require('../authenticate');
-// cons = require(".");
-// cons = require(".");
 
 const courseRouter = express.Router();
 
@@ -23,21 +21,29 @@ courseRouter.route('/')
     .catch((err) => next(err));
 })
 .post(authenticate.verifyUser, authenticate.verifyAdmin,(req, res, next) => {
-    const newCourse = new Courses({
-        title : req.body.title,
-        description : req.body.description,
-        // imageUrl : `/images/${req.file.filename}`,
-        category : req.body.category,
-        level : req.body.level,
-        price : req.body.price,
-        creator: req.user._id,
-        duration:req.body.duration,
-        sectionsNumber:req.body.sectionsNumber,
-      });
-      newCourse.save()
-      .then((course) => {
-        Courses.findById(course._id)
-        .populate('creator')
+    // const newCourse = new Courses({
+    //     title : req.body.title,
+    //     description : req.body.description,
+    //     // imageUrl : `/images/${req.file.filename}`,
+    //     category : req.body.category,
+    //     level : req.body.level,
+    //     price : req.body.price,
+    //     creator: req.user._id,
+    //     duration:req.body.duration,
+    //     sectionsNumber:req.body.sectionsNumber,
+    //   });
+    //   newCourse.save()
+    //   .then((course) => {
+    //     Courses.findById(course._id)
+    //     .populate('creator')
+    //     res.statusCode = 200;
+    //     res.setHeader('Content-Type', 'application/json');
+    //     res.json(course);
+    // }, (err) => next(err))
+    // .catch((err) => next(err));
+    Courses.create(req.body)
+    .then((course) => {
+        console.log('course Created ', course);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
         res.json(course);
