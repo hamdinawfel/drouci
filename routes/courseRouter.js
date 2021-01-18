@@ -448,9 +448,9 @@ courseRouter.route('/:courseId/modules/:moduleId/sections')
             const newSection = {
                 title : req.body.title,
                 description : req.body.description,
-                videoUrl : `/videos/${req.file.filename}`,
+                videoUrl : req.body.videoUrl,
                 duration : req.body.duration,
-                type : req.body.type,
+                format : req.body.format,
               };
             course.modules.id(req.params.moduleId).sections.push(newSection);
             course.save()

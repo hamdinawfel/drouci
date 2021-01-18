@@ -192,7 +192,7 @@ function Course(props) {
     const modulesMarkup = props.course.loading === false && modules?
     <div>
         <Typography className={classes.purshaseOption} color="textSecondary" gutterBottom>
-          • {sectionsNumber} sections • {duration} min
+          • {sectionsNumber} sections • {duration}
          </Typography>
         {modules.map(module => <ModuleItem key={module._id}module={module}/>)}
     </div>:<p>loading</p>
@@ -221,7 +221,7 @@ function Course(props) {
                         <Button className={classes.myButton} onClick={()=>handleAddToWishlist(props.course.data._id)}>Prendre ce cour</Button>
                         <p className={classes.purshaseText}>Ce cours comprend :</p>
                         <Typography className={classes.purshaseOption} color="textSecondary" gutterBottom>
-                           • {duration} munites vidéos
+                           • {duration} vidéos
                         </Typography>
                         <Typography className={classes.purshaseOption} color="textSecondary" gutterBottom>
                            • {sectionsNumber} Sections

@@ -235,20 +235,24 @@
                     />
                 </Grid>
                 <Grid item md={8} className={classes.navSection}> 
-                  <HoverMenu interactive
+                  {/* <HoverMenu interactive
                     title={
                     <div className={classes.hoverMenu}>
-                        <Link to='/catalog/bac-math'color="inherit" underline="none">
+                        <Link to='/catalog/Bac Mathématique'color="inherit" underline="none">
                             <p className={classes.subIem}>Baccalauréat</p>
                           </Link>
-                        <Link to='/catalog/1ere-mp'color="inherit" underline="none">
+                        <Link to='/catalog/2 éme MP'color="inherit" underline="none">
                             <p className={classes.subIem}>Préparatoire</p>
                           </Link>
                     </div>
                     }
-                  >
+                  ><Link to='/catalog/'color="inherit" underline="none">
                     <p className={classes.navItem}>Nos Classes</p>
-                  </HoverMenu>
+                    </Link>
+                  </HoverMenu> */}
+                  <Link to='/catalog/level'color="inherit" underline="none">
+                    <p className={classes.navItem}>Nos Classes</p>
+                    </Link>
                   <Link to='/teacher' color="inherit" style={{textDecoration:'none'}}>
                     <p className={classes.navItem}><span className={classes.hidden}>Devenir</span> Enseignant</p>
                   </Link>

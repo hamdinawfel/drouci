@@ -1,4 +1,5 @@
 import React, {useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 //M-UI
 import { makeStyles } from "@material-ui/core/styles";
 import Radio from '@material-ui/core/Radio';
@@ -115,7 +116,9 @@ function Catalog(props) {
     const handleBac = () => {
         setOpenBac(!openBac);
     };
+    let { level } = useParams();
     useEffect(() => {
+      console.log(level)
        props.getCoursesByLevel(value)
     }, []);
 
@@ -165,8 +168,8 @@ function Catalog(props) {
                 <Collapse in={openBac} timeout="auto" unmountOnExit>
                    <div className={classes.prepaContainer}>
                    <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-                      <FormControlLabel value="bac-math" control={<Radio color='primary'/>} label="Mathématique" />
-                      <FormControlLabel value="bac-science" control={<Radio color='primary'/>} label="Science" />
+                      <FormControlLabel value="Bac Mathématique" control={<Radio color='primary'/>} label="Mathématique" />
+                      <FormControlLabel value="Bac SVT" control={<Radio color='primary'/>} label="Science" />
                       <FormControlLabel value="bac-info" control={<Radio color='primary'/>} label="Informatique" />
                       <FormControlLabel value="bac-technique" control={<Radio color='primary'/>} label="Technique" />
                       <FormControlLabel value="bac-eco" control={<Radio color='primary'/>} label="Economie & Gestion" />

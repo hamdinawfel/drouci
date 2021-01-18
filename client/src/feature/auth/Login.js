@@ -84,7 +84,7 @@ const handleLoginUser = (e) => {
       <CssBaseline />
       <div className={classes.paper}>
         <Typography className={classes.title} component="h1" variant="h5">
-        Connection
+        Connexion
         </Typography>
         {props.user.errors ==='Unauthorized'?<div className={classes.error}>
              <p className={classes.errorText}>Votre identifiant ou votre mot de passe est incorrect.</p>

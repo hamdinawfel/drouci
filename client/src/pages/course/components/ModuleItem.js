@@ -111,7 +111,7 @@ export default function ModuleItem(props) {
             <Typography className={classes.heading}>{props.module.title}</Typography>
            
             <Typography className={classes.secondaryHeading} color="textSecondary" gutterBottom>
-              {props.module.sessionsNumber} sections • {props.module.duration} min
+              {props.module.sessionsNumber} sections • {props.module.duration}
             </Typography>
           </div>
         </AccordionSummary>

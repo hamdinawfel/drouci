@@ -63,6 +63,8 @@ const useStyles = makeStyles(theme => ({
     card:{
         width:300,
         margin:'0px 20px',
+        height:300,
+
         '&:hover': {
             transform: 'scale(1.05)'
         },
@@ -70,11 +72,14 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('sm')]: {
             marginTop:20,
             width:'90%',
+            height:250,
+
         }
     },
     leftCard:{
         width:300,
         float:'right',
+        height:300,
         margin:'0px 20px',
         '&:hover': {
             transform: 'scale(1.05)'
@@ -82,6 +87,7 @@ const useStyles = makeStyles(theme => ({
         transition:'0.1s',
         [theme.breakpoints.down('sm')]: {
             marginTop:20,
+            height:250,
             width:'90%',
             float:'left',
         }

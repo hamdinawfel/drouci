@@ -21,7 +21,7 @@ import { addUserDetail } from '../../../feature/auth/action';
 
 const baclevels = [
                  'Bac Mathématique',
-                 'Bac Science',
+                 'Bac SVT',
                  'Bac Technique',
                  'Bac Informatique',
                  'Bac Economie',
