@@ -89,7 +89,7 @@ export default function Footer() {
            {/* <img src={logo}  alt={logo} style={{ width : 120, margin:'10px 0 -10px 0'}}/> */}
            <p className={classes.title}>Qui Somme Nous?</p>
           <p style={{fontSize: '18px', fontWeight: 300, color:'#fff'}}>Nous construisons l'avenir de l'apprentissage numérique en Afrique et moyen orient.</p>
-          <p style={{fontSize: '18px', fontWeight: 300, color:'#fff'}}>La platforme drouci vise à personnaliser l'éducation nationale et à mettre en oeuvre des contenus de haute qualité pour les étudiants.</p>
+          <p style={{fontSize: '18px', fontWeight: 300, color:'#fff'}}>La plateforme drouci vise à personnaliser l'éducation nationale et à mettre en oeuvre des contenus de haute qualité pour les étudiants.</p>
         </Grid>
         <Grid item xs={12} sm={4} className={classes.social}>
           <p className={classes.title}>Suivez Nous</p>

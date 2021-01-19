@@ -94,7 +94,14 @@ const useStyles = makeStyles(theme => ({
        fontWeight:700,
        fontSize:20,
        color:theme.palette.primary.title,
-
+   },
+   gratuit:{
+       fontWeight:700,
+       fontSize:20,
+       color:'#7cb518',
+       borderRadius:'5px',
+       marginBottom:50,
+       padding:'2px 10px',
    },
    sideSection:{
         boxShadow: '0px 0px 10px rgba(91, 137, 158, 0.5)',
@@ -217,14 +224,20 @@ function Course(props) {
                    <Grid item xs={12} md={3} className={classes.sideSection}>
                         <img src={imageUrl} alt={title} className={classes.image} />
                         <p className={classes.cardtitle}>{title}</p>
-                        <p className={classes.objectifTitle}>{price} DT</p>
-                        <Button className={classes.myButton} onClick={()=>handleAddToWishlist(props.course.data._id)}>Prendre ce cour</Button>
+                        { price === 0 ?
+                        <div style={{ marginBottom : 20}}>
+                          <span className={classes.gratuit}>Gratuit</span>
+                        </div>
+                        :
+                          <p className={classes.objectifTitle}>{price} DT</p>
+                        }
+                        <Button className={classes.myButton} onClick={()=>handleAddToWishlist(props.course.data._id)}>Ajouter ce cours</Button>
                         <p className={classes.purshaseText}>Ce cours comprend :</p>
                         <Typography className={classes.purshaseOption} color="textSecondary" gutterBottom>
                            • {duration} vidéos
                         </Typography>
-                        <Typography className={classes.purshaseOption} color="textSecondary" gutterBottom>
-                           • {sectionsNumber} Sections
+                       <Typography className={classes.purshaseOption} color="textSecondary" gutterBottom>
+                           • {sectionsNumber} sectionsss
                         </Typography>
                         <Typography className={classes.purshaseOption} color="textSecondary" gutterBottom>
                            • Accès illimité
@@ -243,7 +256,7 @@ function Course(props) {
                 Vous êtes abonné pour ce cour
                 </Alert> 
               </Snackbar>}
-       {redirect === false?null:<Redirect to={`/dashboard/${props.user.credentials.level}`}/>}
+       {redirect === false?null:<Redirect to='/dashboard'/>}
        {redirectToAuth === false?null:<Redirect to='/login'/>}
         </div>
     )

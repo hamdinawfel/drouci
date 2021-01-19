@@ -90,7 +90,7 @@
                 <ListItemIcon>
                   <SchoolIcon style={{color:'#fff'}}/>
                 </ListItemIcon>
-                <ListItemText primary="Nos Classes" />
+                <ListItemText primary="Nos cours" />
                   {/* {openClasse ? <ExpandLess /> : <ExpandMore />} */}
               </ListItem>
             </Link>
@@ -251,7 +251,7 @@
                     </Link>
                   </HoverMenu> */}
                   <Link to='/catalog/level'color="inherit" underline="none">
-                    <p className={classes.navItem}>Nos Classes</p>
+                    <p className={classes.navItem}>Nos cours</p>
                     </Link>
                   <Link to='/teacher' color="inherit" style={{textDecoration:'none'}}>
                     <p className={classes.navItem}><span className={classes.hidden}>Devenir</span> Enseignant</p>

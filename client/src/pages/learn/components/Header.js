@@ -16,9 +16,9 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     width: '80%',
-    height:'170px',
-    objectFit: 'cover',
-    marginRight:80,
+    // height:'170px',
+    // objectFit: 'cover',
+    // marginRight:80,
     marginTop:-10,
     [theme.breakpoints.down('sm')]: {
      display:'none'
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
    }
   },
   description:{
-    padding:'0 0 0 30px',
+    padding:'0 0 0 0px',
     [theme.breakpoints.down('sm')]: {
       padding:'10px',
    }
@@ -53,26 +53,27 @@ export default function Header(props) {
   return (
     <Card className={classes.root}>
       <Grid container className={classes.reverse} justify="center" direction="row" alignItems="center">
-          <Grid item md={4} style={{padding:'30px 0 0 15px', margin:'auto'}}>
+          <Grid item md={3} style={{margin:'auto', display:'flex', justifyContent:'center', alignItems:'center'}}>
              <img
                 className={classes.image}
                 src={props.course.imageUrl}
                 alt="course"
               />
           </Grid>
-          <Grid item sm={12} md={5} className={classes.description}>
+          <Grid item sm={12} md={6} className={classes.description}>
               <Typography component="h5" variant="h6" className={classes.title}>
                  { props.course.title }
               </Typography> 
-              <Typography variant="subtitle1" color="textSecondary" style={{fontWeight:600}}>
+              <Typography variant="subtitle1" color="textSecondary" style={{fontWeight:600, fontSize:14}}>
                { props.course.category }
+              </Typography>
+               <Typography className={classes.purshaseOption} color="textSecondary" gutterBottom style={{fontSize:14, marginTop:10}}>
+              •  {props.course.sectionsNumber} sections • {props.course.duration}
               </Typography>
               <Typography variant="subtitle1" color="textSecondary">
                { props.course.description }
               </Typography>
-              <Typography className={classes.purshaseOption} color="textSecondary" gutterBottom style={{fontSize:14, marginTop:10}}>
-              •  {props.course.sectionsNumber} sections • {props.course.duration}
-              </Typography>
+             
           </Grid>
           <Grid item sm={12} md={3}>
             <div>
@@ -100,6 +101,7 @@ export default function Header(props) {
               </Pie>
           </PieChart>
             </div>
+           
           </Grid>
       </Grid>
     </Card>
