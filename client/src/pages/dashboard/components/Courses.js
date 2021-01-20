@@ -55,7 +55,7 @@ const useStyles = makeStyles(theme => ({
             <CardMedia
               component="img"
               alt="Contemplative Reptile"
-              height="150"
+              // height="150"
               width="100px"
               image={props.course.imageUrl}
               title="Contemplative Reptile"/>

@@ -48,9 +48,13 @@ const useStyles = makeStyles((theme) => ({
      },
   },
   sectionHeading:{
-   cursor:'pointer',
+    fontSize:'0.9rem',
+    textTransform:'capitalize',
+    marginTop:-10,
+    cursor:'pointer',
    '&:hover': {
     color:theme.palette.primary.main,
+    fontWeight:600
 },
   },
   accordion:{
@@ -141,9 +145,9 @@ function ModuleItem(props) {
         </AccordionSummary>
         {props.module.sections.map(section => <AccordionDetails key={section._id} style={{marginLeft:20}}>
           <PlayCircleFilledIcon className={classes.playIcon} fontSize='small' style={{ color: props.completedSections.indexOf(section._id) !== -1?'#2E7E32':'#525c65'}} onClick={()=>console.log(props.completedSections.indexOf(section._id))}/>
-          <Typography className={classes.sectionHeading} onClick={()=>handleClickOpen(section._id)}>
+          <Button disabled={!section.access}className={classes.sectionHeading} onClick={()=>handleClickOpen(section._id)}>
             {section.title}
-          </Typography>
+          </Button>
           <Dialog
             className={classes.dialog}
             fullWidth={true}

@@ -5,9 +5,11 @@ import {
 //M-UI
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Grid } from '@material-ui/core';
-
+//conponents
+import Checkout from './Checkout'
 const COLORS = ['#F5F6F7', '#10AA50'];
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
    }
   },
   title:{
-    marginTop:-10,
+    marginTop:10,
     fontWeight:700
   }
 }));
@@ -73,7 +75,10 @@ export default function Header(props) {
               <Typography variant="subtitle1" color="textSecondary">
                { props.course.description }
               </Typography>
-             
+              {/* <Button variant="outlined" size="small" color="primary" >
+                  Achetez le cours
+                </Button> */}
+                <Checkout />
           </Grid>
           <Grid item sm={12} md={3}>
             <div>

@@ -127,7 +127,7 @@ export default function Main() {
                             </CardActionArea>
                             <CardActions style={{display:'block', justifyContent:'center'}}>
                             <Link to='/catalog/1ere-mp' style={{textDecoration:'none'}}>
-                                <Button variant="outlined" size="small" color="primary" style={{margin:15}}>
+                                <Button variant="outlined" size="small" color="primary" style={{margin:'0 0 0 0'}}>
                                    Découvrir
                                 </Button>
                             </Link>
@@ -150,7 +150,7 @@ export default function Main() {
                             </CardActionArea>
                             <CardActions style={{display:'block', justifyContent:'center'}}>
                             <Link to='/catalog/bac-math' style={{textDecoration:'none'}}>
-                                <Button variant="outlined" size="small" color="primary" style={{margin:15}}>
+                                <Button variant="outlined" size="small" color="primary" style={{margin:'20px 0 0 0'}}>
                                 Découvrir
                                 </Button>
                             </Link>

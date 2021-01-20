@@ -1,7 +1,9 @@
 import React, {useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 //M-UI
+
 import { makeStyles } from "@material-ui/core/styles";
+import Zoom from '@material-ui/core/Zoom';
 import Radio from '@material-ui/core/Radio';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
@@ -18,7 +20,7 @@ import CourseCard from './components/CourseCard'
 import LoadingCard from './components/LoadingCard'
 //Redux
 import { connect } from 'react-redux';
-import { getCoursesByLevel, getCoursesByCategory } from './action';
+import { getCoursesByLevel, getCoursesByCategory, getAllCourses } from './action';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -118,8 +120,9 @@ function Catalog(props) {
     };
     let { level } = useParams();
     useEffect(() => {
-      console.log(level)
-       props.getCoursesByLevel(value)
+      level === 'level'?props.getAllCourses(): props.getCoursesByLevel(value)
+      // setValue(level)
+      // console.log(value)
     }, []);
 
     const handleFilter = (category) => {
@@ -130,15 +133,16 @@ function Catalog(props) {
         <div className={classes.root}>
             <div className={classes.filter}>
               <Button disabled={props.courses.loading} onClick={()=>setSelected(!selected)} variant="contained" className={classes.button}>CATÉGORIE
-                <ExpandMore className={classes.icon} style={{transform: selected?'rotate(180deg)':null, transition:' 0.1s'}}/>
+                <ExpandMore className={classes.icon} style={{transform: selected?'rotate(180deg)':null, transition:' 0.1s'}} />
               </Button>
-              <div className={classes.categoryContainer} style={{display: !selected || props.courses.loading?'none':'block', transition:' 0.1s'}}>
-              <FormControl component="fieldset">
-              <FormLabel component="legend">Choisir votre classe</FormLabel>
-              <p className={classes.category} onClick={handlePrepa} >
-                   Préparatoire
-                  {openPrepa ? <ExpandLess className={classes.icon}/> : <ExpandMore className={classes.icon}/>} 
-                </p>
+              <Zoom in={selected}>
+                <div className={classes.categoryContainer}  onMouseLeave={()=>setSelected(!selected)}>
+                  <FormControl component="fieldset">
+                  <FormLabel component="legend">Choisir votre classe</FormLabel>
+                  <p className={classes.category} onClick={handlePrepa} >
+                      Préparatoire
+                      {openPrepa ? <ExpandLess className={classes.icon}/> : <ExpandMore className={classes.icon}/>} 
+                    </p>
                 
                 <Collapse in={openPrepa} timeout="auto" unmountOnExit>
                    <div className={classes.prepaContainer}>
@@ -179,16 +183,17 @@ function Catalog(props) {
                 </Collapse>
                 </FormControl>
               </div>
+              </Zoom>
             </div>
-                    { props.courses.loading?
-                        <div>
-                            {[0,1,2].map((item)=><LoadingCard key={item} />)}
-                        </div>
-                        :
-                        <div>
-                            {props.courses.fitredData.map(item => <CourseCard key={item._id} item={item} />)}
-                        </div>
-                    }
+              { props.courses.loading?
+                  <div>
+                      {[0,1,2].map((item)=><LoadingCard key={item} />)}
+                  </div>
+                  :
+                  <div>
+                      {props.courses.fitredData.map(item => <CourseCard key={item._id} item={item} />)}
+                  </div>
+              }
         </div>
     )
 }
@@ -199,7 +204,8 @@ const mapStateToProps = (state) => ({
   });
   const mapActionsToProps = {
     getCoursesByLevel,
-    getCoursesByCategory
+    getCoursesByCategory,
+    getAllCourses
   };
   export default connect(
     mapStateToProps,

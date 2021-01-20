@@ -18,10 +18,10 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     width: '80%',
-    height:'170px',
-    objectFit: 'cover',
+    // height:'170px',
+    // objectFit: 'cover',
     marginRight:80,
-    marginTop:-10,
+    // marginTop:-10,
     [theme.breakpoints.down('sm')]: {
      display:'none'
   }
@@ -52,7 +52,7 @@ export default function CourseCard(props) {
   return (
     <Card className={classes.root}>
       <Grid container className={classes.reverse} justify="center" direction="row" alignItems="center">
-          <Grid item md={4} style={{padding:'30px 0 0 15px', margin:'auto'}}>
+          <Grid item md={4} style={{margin:'auto', display:'flex', justifyContent:'center', alignItems:'center'}}>
              <img
                 className={classes.image}
                 src={props.wishlist.imageUrl}
