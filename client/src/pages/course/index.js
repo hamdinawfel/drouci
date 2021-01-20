@@ -231,7 +231,7 @@ function Course(props) {
                         :
                           <p className={classes.objectifTitle}>{price} DT</p>
                         }
-                        <Button className={classes.myButton} onClick={()=>handleAddToWishlist(props.course.data._id)}>Ajouter ce cours</Button>
+                        <Button className={classes.myButton} onClick={()=>handleAddToWishlist(props.course.data._id)}>Ajoutez ce cours</Button>
                         <p className={classes.purshaseText}>Ce cours comprend :</p>
                         <Typography className={classes.purshaseOption} color="textSecondary" gutterBottom>
                            • {duration} vidéos
