@@ -7,8 +7,6 @@ const path = require("path");
 const mongoose = require("mongoose");
 const passport = require("passport");
 
-
-
 //Load routes
 const users = require("./routes/users");
 const courseRouter = require("./routes/courseRouter");
