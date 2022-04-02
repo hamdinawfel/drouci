@@ -1,7 +1,8 @@
 # drouci
-LIVE DEMO : https://drouci.herokuapp.com/
+> MVP for E-learning platform created to get startup act label in 2020.
+>LIVE DEMO : https://drouci.herokuapp.com/
 
-> Full web site pages screenshots:
+# Full web site pages screenshots:
 
 ## Home Page:
 
