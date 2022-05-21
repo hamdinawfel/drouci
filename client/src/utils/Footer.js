@@ -121,14 +121,10 @@ export default function Footer() {
             <img src={logo} alt ="logo" style={{ width:50 , height:50 ,userSelect:'none', marginTop:15 }}/>
             <h1 style={{color:'#fff', fontSize:'2rem', margin:'15px 0 0 0', fontWeight:700, userSelect:'none'}}>drouci</h1>
           </div>
-{/* 
-          <Typography variant="body2" color="#fff" style={{color:'#fff'}}>
-             Condition d'utilisation
-            </Typography> */}
-        </Grid>
         <Grid item xs={12} sm={4} className={classes.diplay} style={{paddingLeft:70}}>
+          
             {/* <Typography variant="body2" color="#fff" style={{color:'#fff'}}>
-               Confidentialité
+               Confidentialité TODO: add privacy page link here
             </Typography> */}
         </Grid>
         <Grid item xs={12} sm={3}>
