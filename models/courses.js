@@ -19,7 +19,6 @@ const sectionSchema = new Schema({
     },
     format:{
         type: String,
-        // required: true
     },
     videoUrl:{
         type: String,
@@ -75,7 +74,6 @@ const courseSchema = new Schema({
     },
     imageUrl: {
         type: String,
-        // required: true
     },
     sectionsNumber:{
         type: Number,
